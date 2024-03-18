@@ -15,7 +15,7 @@ Todos estos datos están extraídos, principalmente, con la API de Ticketmaster.
 ## Sobre la instalación
 En primer lugar, clona el repositorio de este proyecto en tu dispositivo utilizando el comando _git clone_ y pegando a continuación la URL del repositorio especificada [aquí](https://github.com/yushyng/proyecto_aa.git).
 
-El proyecto se desarrollará con PyCharm. Por ello, recomendamos tener descargado este entorno de desarrollo.
+El proyecto se desarrollará con PyCharm. Por ello, recomendamos tener descargado este entorno de desarrollo. Asegúrate tener instalado un intérpetre de Python 3.10.
 
 Antes de comenzar a trabajar, realiza un _pull_ para bajarte la última versión del proyecto. Recomendamos también la realización de _commits_ periódicos para mantener a salvo cualquier cambio elaborado (no esperes a tener el código terminado para hacer _commit_). Y después de un _commit_, hacer un _push_ (existe la opción de hacer ambas cosas juntas en un solo paso).
 
