@@ -35,33 +35,33 @@ class LimpiezaInicial:
             return None
 
     def obtener_end_datetime(self, fila):
-      return fila['sales']['public'].get('endDateTime')
+        return fila['sales']['public'].get('endDateTime')
 
     def obtener_min_price(self, fila):
         if 'priceRanges' in fila and isinstance(fila['priceRanges'], list) and fila['priceRanges']:
             for price_range in fila['priceRanges']:
-                 if price_range.get('type') == 'standard':
+                if price_range.get('type') == 'standard':
                     return price_range['min']
             return None
 
     def obtener_max_price(self, fila):
         if 'priceRanges' in fila and isinstance(fila['priceRanges'], list) and fila['priceRanges']:
             for price_range in fila['priceRanges']:
-                 if price_range.get('type') == 'standard':
-                       return price_range['max']
+                if price_range.get('type') == 'standard':
+                    return price_range['max']
             return None
 
     def obtener_promotor(self, fila):
-         if 'promoter' in fila and isinstance(fila['promoter'], dict):
+        if 'promoter' in fila and isinstance(fila['promoter'], dict):
             return fila['promoter'].get('name')
-         else:
-             return None
+        else:
+            return None
 
     def obtener_genero(self, fila):
         if isinstance(fila['classifications'], list) and fila['classifications']:
             for item in fila['classifications']:
                 if 'genre' in item and isinstance(item['genre'], dict):
-                     return item['genre'].get('name')
+                    return item['genre'].get('name')
             return None
 
     def obtener_subgenero(self, fila):

@@ -1,14 +1,19 @@
 from Carga import Carga
 from LimpiezaInicial import LimpiezaInicial
+
 # Lista de archivos a cargar
-archivos = [
+"""archivos = [
 '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_17_02.csv',
  '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_1_03.csv',
  '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_21_02.csv',
  '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_26_02.csv',
  '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_28_02.csv',
  '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/datos_5_03.csv'
-]
+]"""
+
+archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
+            'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
+            'csvs/adquisicion/d_28_02.csv', 'csvs/adquisicion/datos_5_03.csv']
 
 # Instanciar la clase y cargar los archivos
 cargador = Carga(archivos)
@@ -42,4 +47,6 @@ df_total['genero'] = df_total.apply(limpieza.obtener_genero, axis=1)
 df_total['subgnero'] = df_total.apply(limpieza.obtener_subgenero, axis=1)
 df_total['promoter'] = df_total.apply(limpieza.obtener_promotor, axis=1)
 print(df_total)
+
+
 
