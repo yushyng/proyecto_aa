@@ -70,5 +70,65 @@ class LimpiezaInicial:
                 if 'subGenre' in item and isinstance(item['subGenre'], dict):
                     return item['subGenre'].get('name')
             return None
-cb957ab29c5725edadde811154c1780dfdb532c0
-g
+
+    def load_json(json_str):
+        try:
+            json_object = json.loads(json_str)
+            return json_object
+        except json.JSONDecodeError as e:
+            return None
+
+    def genre_event(self, fila):
+        if 'columna_json' in fila and 'attractions' in fila['columna_json'] and fila['columna_json']['attractions']:
+            return fila['columna_json']['attractions'][0]['classifications'][0]['genre']['name']
+        else:
+            return None
+
+    def subgenre_event(self, fila):
+        if 'columna_json' in fila and 'attractions' in fila['columna_json'] and fila['columna_json']['attractions']:
+            return fila['columna_json']['attractions'][0]['classifications'][0]['subGenre']['name']
+        else:
+            return None
+
+    def type_event(self, fila):
+        if 'columna_json' in fila and 'attractions' in fila['columna_json'] and fila['columna_json']['attractions']:
+            return fila['columna_json']['attractions'][0]['classifications'][0]['type']['name']
+        else:
+            return None
+
+    def subtype_event(self, fila):
+        if 'columna_json' in fila and 'attractions' in fila['columna_json'] and fila['columna_json']['attractions']:
+            return fila['columna_json']['attractions'][0]['classifications'][0]['subType']['name']
+        else:
+            return None
+
+    def name(self, fila):
+        if 'columna_json' in fila and 'attractions' in fila['columna_json'] and fila['columna_json']['attractions']:
+            return fila['columna_json']['attractions'][0]['name']
+        else:
+            return None
+
+    def venue_name(self, fila):
+        return fila['columna_json']['venues'][0]['name']
+
+    def venue_city(self, fila):
+        return fila['columna_json']['venues'][0]['city']['name']
+
+    def venue_state(self, fila):
+        return fila['columna_json']['venues'][0]['state']['name']
+
+    def venue_country(self, fila):
+        return fila['columna_json']['venues'][0]['country']['name']
+
+    def links(self, fila):
+        if 'columna_json' in fila and 'attractions' in fila['columna_json']:
+            attractions = fila['columna_json']['attractions']
+            if attractions and 'externalLinks' in attractions[0]:
+                return attractions[0]['externalLinks']
+        return None
+
+    def num_links(self, fila):
+        if fila['links'] == None:
+            return 0
+        else:
+            return len(fila['links'].keys())

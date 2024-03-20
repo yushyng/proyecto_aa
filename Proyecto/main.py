@@ -3,16 +3,6 @@ import pandas as pd
 import json
 from LimpiezaInicial import LimpiezaInicial
 
-# Lista de archivos a cargar
-"""archivos = [
-'/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_17_02.csv',
- '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_1_03.csv',
- '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_21_02.csv',
- '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_26_02.csv',
- '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/d_28_02.csv',
- '/Users/yushanyang/Desktop/ProyectoDatos/Proyecto/csvs/adquisicion/datos_5_03.csv'
-]"""
-
 archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
             'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
             'csvs/adquisicion/d_28_02.csv', 'csvs/adquisicion/datos_5_03.csv']
@@ -58,7 +48,10 @@ print(df_total)
 generos = ['Classical', 'Theatre', 'Fairs & Festivals']
 df_total = df_total[~df_total['genero'].isin(generos)]
 print(len(df_total))
-df_total['columna_json'] = df_total['_embedded'].apply(load_json)
+generos = ['Classical', 'Theatre', 'Fairs & Festivals']
+df_total = df_total[~df_total['genero'].isin(generos)]
 
+df_total['columna_json'] = df_total['_embedded'].apply(limpieza.load_json)
+print(len(df_total))
 
 
