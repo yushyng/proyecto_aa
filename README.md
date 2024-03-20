@@ -29,6 +29,8 @@ Además, complementaremos esta información con otras fuentes de datos secundari
 
 Se probó con la extracción de información de Google Trends, pero sin éxito. Por ello, lo próximo será probar con nuevas fuentes de datos secundarias como Instagram para obtener el número de seguidores (esto dará una idea sobre la popularidad del artista).
 
+## Sobre el código
+_Próximamente..._
 
 ## Lo último en el repositorio... (09/03/2024)
 Organización del repositorio con la nueva carpeta "Proyecto". \
