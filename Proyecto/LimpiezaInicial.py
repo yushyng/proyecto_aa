@@ -70,3 +70,10 @@ class LimpiezaInicial:
                 if 'subGenre' in item and isinstance(item['subGenre'], dict):
                     return item['subGenre'].get('name')
             return None
+
+    def load_json(self, json_str):
+        try:
+            json_object = json.loads(json_str)
+            return json_object
+        except json.JSONDecodeError as e:
+            return None

@@ -1,4 +1,6 @@
 from Carga import Carga
+import pandas as pd
+import json
 from LimpiezaInicial import LimpiezaInicial
 # Lista de archivos a cargar
 archivos = [
@@ -41,5 +43,15 @@ df_total['max_price'] = df_total.apply(limpieza.obtener_max_price, axis=1)
 df_total['genero'] = df_total.apply(limpieza.obtener_genero, axis=1)
 df_total['subgnero'] = df_total.apply(limpieza.obtener_subgenero, axis=1)
 df_total['promoter'] = df_total.apply(limpieza.obtener_promotor, axis=1)
+
+df_total = df_total.reset_index(drop=True)
+df_total = df_total.drop(columns=['sales','dates','classifications','priceRanges'])
+#Es probable que no encontremos información de los oyenetes de los géneros: Classical,
+# Theatre, Fairs & Festivals. Esta será una de nuestras variables principales por lo que
+# al no tenerla no podremos usar estos datos como prueba.
 print(df_total)
+generos = ['Classical', 'Theatre', 'Fairs & Festivals']
+df_total = df_total[~df_total['genero'].isin(generos)]
+print(len(df_total))
+df_total['columna_json'] = df_total['_embedded'].apply(load_json)
 
