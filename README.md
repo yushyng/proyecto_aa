@@ -25,6 +25,7 @@ Antes de comenzar a trabajar, realiza un _pull_ para bajarte la última versión
 Además, complementaremos esta información con otras fuentes de datos secundarias como son:
 - [Spotify](https://open.spotify.com/intl-es): número de oyentes mensuales actuales
 - [Last.FM](https://www.last.fm/es/): número de oyentes mensuales
+- [Wikipedia](https://es.wikipedia.org/wiki/Wikipedia:Portada):género y edad de los artistas
 
 Se probó con la extracción de información de Google Trends, pero sin éxito. Por ello, lo próximo será probar con nuevas fuentes de datos secundarias como Instagram para obtener el número de seguidores (esto dará una idea sobre la popularidad del artista).
 

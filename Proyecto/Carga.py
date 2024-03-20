@@ -18,6 +18,6 @@ class Carga:
             print("Filas duplicadas:", num_duplicados)
             self.df_total.drop_duplicates(inplace=True)
             print("Num filas sin duplicados:", len(self.df_total))
-            self.df_total.drop(columns=['id', 'test','url', 'images', 'promoters', 'type', 'locale', '_links', 'seatmap'], inplace=True)
+            self.df_total.drop(columns=['id', 'test', 'url', 'images', 'promoters', 'type', 'locale', '_links', 'seatmap'], inplace=True)
         else:
             print("Error: No se han cargado los archivos todavía.")
