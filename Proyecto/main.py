@@ -1,5 +1,6 @@
 from Carga import Carga
 from LimpiezaInicial import LimpiezaInicial
+from Spotify import Spotify
 
 archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
             'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
@@ -76,4 +77,24 @@ df_total['VenueCountry'] = df_total.apply(lambda fila: limpieza.venue_country(fi
 
 df_total['links'] = df_total.apply(lambda fila: limpieza.links(fila), axis=1)
 df_total['num_links'] = df_total.apply(lambda fila: limpieza.num_links(fila), axis=1)
-print(df_total['links'])
+print(df_total.iloc[0]['links']['spotify'][0]['url'])
+
+client_id = '3e082f0f2dd240c1beb66c9705a663a5'
+client_secret = 'd3dd1f7886eb4ba4aa5a76c9095120d7'
+spotify = Spotify(client_id, client_secret)
+
+#print(df_total['links'].isnull().sum())
+
+
+# Aplicar la función obtener_seguidores_por_fila a cada fila de la columna 'links'
+df_total['spotify_url'] = df_total['links'].apply(lambda x: x['spotify'][0]['url'] if x and 'spotify' in x and isinstance(x['spotify'], list) and len(x['spotify']) > 0 else None)
+
+# Mostrar el DataFrame df_total con la nueva columna 'spotify_url'
+print(df_total['spotify_url'])
+
+df_total['spotify_url'] = df_total['spotify_url'].astype(str)
+
+# Aplicar la función obtener_seguidores_por_fila a cada fila de la columna 'spotify_url'
+df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidores_por_fila)
+print(df_total['seguidores'] )
+
