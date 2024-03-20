@@ -1,5 +1,6 @@
 import json
 
+
 class LimpiezaInicial:
     def __init__(self):
         self.df_total = None
@@ -28,10 +29,11 @@ class LimpiezaInicial:
         return df
 
         # Nuevos métodos para obtener información específica
+
     def obtener_start_datetime(self, fila):
-         if 'access' in fila['dates'] and 'startDateTime' in fila['dates']['access']:
-             return fila['dates']['access']['startDateTime']
-         else:
+        if 'access' in fila['dates'] and 'startDateTime' in fila['dates']['access']:
+            return fila['dates']['access']['startDateTime']
+        else:
             return None
 
     def obtener_end_datetime(self, fila):
@@ -71,7 +73,15 @@ class LimpiezaInicial:
                     return item['subGenre'].get('name')
             return None
 
-    def load_json(json_str):
+    def arreglo_embeded(df):
+        em = df['_embedded']
+        col = em.str.replace("'", '"')
+        col = col.str.replace("True", 'true')
+        col = col.str.replace("False", 'false')
+        df['_embedded'] = col
+        return df
+
+    def load_json(self, json_str):
         try:
             json_object = json.loads(json_str)
             return json_object
@@ -132,3 +142,4 @@ class LimpiezaInicial:
             return 0
         else:
             return len(fila['links'].keys())
+

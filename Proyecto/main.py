@@ -3,6 +3,7 @@ import pandas as pd
 import json
 from LimpiezaInicial import LimpiezaInicial
 
+
 archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
             'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
             'csvs/adquisicion/d_28_02.csv', 'csvs/adquisicion/datos_5_03.csv']
@@ -40,7 +41,7 @@ df_total['subgnero'] = df_total.apply(limpieza.obtener_subgenero, axis=1)
 df_total['promoter'] = df_total.apply(limpieza.obtener_promotor, axis=1)
 
 df_total = df_total.reset_index(drop=True)
-df_total = df_total.drop(columns=['sales','dates','classifications','priceRanges'])
+df_total = df_total.drop(columns=['sales', 'dates', 'classifications', 'priceRanges'])
 #Es probable que no encontremos información de los oyenetes de los géneros: Classical,
 # Theatre, Fairs & Festivals. Esta será una de nuestras variables principales por lo que
 # al no tenerla no podremos usar estos datos como prueba.
@@ -51,7 +52,11 @@ print(len(df_total))
 generos = ['Classical', 'Theatre', 'Fairs & Festivals']
 df_total = df_total[~df_total['genero'].isin(generos)]
 
+
+df_total = LimpiezaInicial.arreglo_embeded(df_total)
 df_total['columna_json'] = df_total['_embedded'].apply(limpieza.load_json)
+
+print(df_total['columna_json'])
 print(len(df_total))
 
 
