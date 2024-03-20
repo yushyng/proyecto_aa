@@ -1,8 +1,5 @@
 from Carga import Carga
-import pandas as pd
-import json
 from LimpiezaInicial import LimpiezaInicial
-
 
 archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
             'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
@@ -59,4 +56,22 @@ df_total['columna_json'] = df_total['_embedded'].apply(limpieza.load_json)
 print(df_total['columna_json'])
 print(len(df_total))
 
+print("Nulos en la columna embdededd cambiada", df_total['columna_json'].isnull().sum())
 
+df_total = df_total.dropna(subset=['columna_json'])
+
+#df_total['nameArtist'] = df_total.apply(LimpiezaInicial.name, axis=1).copy()
+df_total['nameArtist'] = df_total.apply(lambda fila: LimpiezaInicial().name(fila), axis=1).copy()
+print(df_total['nameArtist'].isnull().sum())
+
+df_total['genre'] = df_total.apply(LimpiezaInicial.genre_event, axis=1).copy()
+df_total['subgenre'] = df_total.apply(LimpiezaInicial.subgenre_event, axis=1).copy()
+df_total['type'] = df_total.apply(LimpiezaInicial.type_event, axis=1).copy()
+df_total['subtype'] = df_total.apply(LimpiezaInicial.subtype_event, axis=1).copy()
+df_total['VenueName'] = df_total.apply(LimpiezaInicial.venue_name, axis=1).copy()
+df_total['VenueCity'] = df_total.apply(LimpiezaInicial.venue_city, axis=1).copy()
+df_total['VenueState'] = df_total.apply(LimpiezaInicial.venue_state, axis=1).copy()
+df_total['VenueCountry'] = df_total.apply(LimpiezaInicial.venue_country, axis=1).copy()
+
+df_total['links'] = df_total.apply(LimpiezaInicial.links, axis=1)
+df_total['num_links'] = df_total.apply(LimpiezaInicial.num_links, axis=1)
