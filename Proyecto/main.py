@@ -1,5 +1,6 @@
 from Carga import Carga
 from LimpiezaInicial import LimpiezaInicial
+from YoutubeSubs import YoutubeSubs
 from Spotify import Spotify
 import time
 from LastFm import LastFm
@@ -110,9 +111,6 @@ df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidore
 
 
 
-lastfm_client = LastFm("d3668e7b9ace955aaefafa6e262386ba")
+'''lastfm_client = LastFm("d3668e7b9ace955aaefafa6e262386ba")
 df_total['lastfm_url'] = df_total['links'].apply(lambda x: x['lastfm'][0]['url'] if x and 'lastfm' in x and isinstance(x['lastfm'], list) and len(x['lastfm']) > 0 else None)
-df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastfm)
-print(df_total['seguidoresLast'])
-
-
+df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastf
