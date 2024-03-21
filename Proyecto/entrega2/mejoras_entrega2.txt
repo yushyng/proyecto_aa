@@ -1,0 +1,22 @@
+--> Mirar lo de los links de _embedded:
+¿Nos interesa guardarlos? ¿Todos? ¿Solo algunos? ¿Guardar cada link en un variable de nombre de la red social ("youtube", "twitter"...)? 
+¿Guardarlos todos juntos en una misma variable de "links"? ¿Crear una variable para cada red social y poner 1 si la tienen o 0 si no la tienen (variable
+binaria)? En este caso, ¿guardar también el link? ¿Guardar link y obtener algunas informaciones?
+
+--> La fuente de Google Trends como no es posible, poder complementarla con otra: seguidores en una RRSS, por ejemplo
+
+--> Cuando dividamos en train y test, tendremos un problema de ruido en los datos, pues ¿qué pasa con los artistas que dan conciertos 3 noches
+seguidas en el mismo lugar (un concierto de varios días)? Estaríamos engañando al sistema con datos que en realidad sí ha visto. Para solucionarlo:
+Añadir una variable nueva que sea "num_noches" (o similar, numérica) para poder juntar todos los conciertos de cada uno estos casos en 1 solo.
+
+--> Mirar lo de la variable StartDateTime: ¿qué variable es realmente (inicio evento o inicio ventas)? ¿Por qué tiene tantos nulos? 
+¿Deberíamos eliminar las filas de nulos o eliminar la variable entero o dejarla? 
+Aun así, dijimos: inicio evento + inicio ventas + final ventas (total de 3) y solo tenemos 2
+
+--> La matriz de correlación: ponerle el rango de -1 a 1 (estandarizarlo para los colores)
+
+--> Archivos parquet: no hacae falta ninguna división porque nuestro conjunto de datos no es masivamente grande.
+
+--> Quedaba pendiente para la siguiente entrega:
+ * Clasificar VenueName según capacidad del sitio como: estadio, teatro o sala
+ * Seguir explorando y analizando datos, sobre todo de las variables categóricas. Sacar conclusiones
