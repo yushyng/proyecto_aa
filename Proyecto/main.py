@@ -2,7 +2,8 @@ from Carga import Carga
 from LimpiezaInicial import LimpiezaInicial
 from Spotify import Spotify
 import time
-from Wiki import Wiki
+from LastFm import LastFm
+import requests
 
 archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
             'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
@@ -109,6 +110,9 @@ df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidore
 
 
 
-
+lastfm_client = LastFm("d3668e7b9ace955aaefafa6e262386ba")
+df_total['lastfm_url'] = df_total['links'].apply(lambda x: x['lastfm'][0]['url'] if x and 'lastfm' in x and isinstance(x['lastfm'], list) and len(x['lastfm']) > 0 else None)
+df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastfm)
+print(df_total['seguidoresLast'])
 
 
