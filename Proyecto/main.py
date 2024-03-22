@@ -3,6 +3,7 @@ from LimpiezaInicial import LimpiezaInicial
 from YoutubeSubs import YoutubeSubs
 from Spotify import Spotify
 from Wiki import Wiki
+import pandas as pd
 import time
 from LastFm import LastFm
 from exploracion import Exploracion
@@ -114,12 +115,22 @@ df_total['spotify_url'] = df_total['spotify_url'].astype(str)
 # Aplicar la función obtener_seguidores_por_fila a cada fila de la columna 'spotify_url'
 df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidores_por_fila)
 
+api_key = "AIzaSyBnd9DxGl04Adp7VgtDrgKYbB57HqsAUvM"
+df_total['spotify_url'] = df_total['links'].apply(lambda x: x['youtube'][0]['url'] if x and 'youtube' in x and isinstance(x['youtube'], list) and len(x['youtube']) > 0 else None)
+
+youtube_subs = YoutubeSubs(api_key)
+df_total['subscriptores'] = df_total['spotify_url'].apply(youtube_subs.get_subscribers)
 
 
 lastfm_client = LastFm("d3668e7b9ace955aaefafa6e262386ba")
 df_total['lastfm_url'] = df_total['links'].apply(lambda x: x['lastfm'][0]['url'] if x and 'lastfm' in x and isinstance(x['lastfm'], list) and len(x['lastfm']) > 0 else None)
 df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastfm)
 
+
+df_total['wiki_url'] = df_total['links'].apply(lambda x: x['wiki'][0]['url'] if x and 'wiki' in x and isinstance(x['wiki'], list) and len(x['wiki']) > 0 else None)
+
+wiki = Wiki()
+df_total['premios'] = df_total['wiki_url'].apply(wiki.count_won_awards_with_wiki)
 print("\nCONJUNTO DE DATOS FINAL")
 print(df_total)
 df_total.to_csv('df_total.csv', index=False)

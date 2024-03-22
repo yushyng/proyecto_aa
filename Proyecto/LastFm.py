@@ -20,7 +20,6 @@ class LastFm:
         """Cuando la solicitud "get" es exitosa, analiza el contenido HTML utilizando 
         BeautifulSoup para encontrar la etiqueta <abbr> que contiene el número de seguidores."""
         if url is None:
-            print("URL no proporcionada. No se pueden obtener seguidores.")
             return None
 
         print("Obteniendo seguidores para la URL:", url)  # Agregar impresión de diagnóstico
@@ -34,8 +33,6 @@ class LastFm:
                 listeners = self.parse_abbr_to_int(listeners_text)
                 return listeners
             else:
-                print("No se pudo encontrar el número de oyentes en la página.")
                 return None
         else:
-            print("No se pudo acceder a la página:", response.status_code)
             return None
