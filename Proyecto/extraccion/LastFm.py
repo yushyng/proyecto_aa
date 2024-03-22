@@ -22,8 +22,6 @@ class LastFm:
         if url is None:
             return None
 
-        print("Obteniendo seguidores para la URL:", url)  # Agregar impresión de diagnóstico
-
         response = requests.get(url)
         if response.status_code == 200:
             soup = BeautifulSoup(response.content, 'html.parser')
