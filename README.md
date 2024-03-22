@@ -15,7 +15,7 @@ Todos estos datos están extraídos, principalmente, con la API de Ticketmaster.
 ## Sobre la instalación
 En primer lugar, clona el repositorio de este proyecto en tu dispositivo utilizando el comando _git clone_ y pegando a continuación la URL del repositorio especificada [aquí](https://github.com/yushyng/proyecto_aa.git).
 
-El proyecto se desarrollará con PyCharm. Por ello, recomendamos tener descargado este entorno de desarrollo. Asegúrate tener instalado un intérpetre de Python 3.9 o una versión superior.
+El proyecto se desarrollará con PyCharm. Por ello, recomendamos tener descargado este entorno de desarrollo. Asegúrate de tener instalado un intérpetre de Python 3.9 o una versión superior.
 
 Antes de comenzar a trabajar, realiza un _pull_ para bajarte la última versión del proyecto. Recomendamos también la realización de _commits_ periódicos para mantener a salvo cualquier cambio elaborado (no esperes a tener el código terminado para hacer _commit_). Y después de un _commit_, hacer un _push_ (existe la opción de hacer ambas cosas juntas en un solo paso).
 
@@ -29,7 +29,13 @@ Además, complementaremos esta información con otras fuentes de datos secundari
 Se probó con la extracción de información de Google Trends, pero sin éxito. Por ello, lo próximo será probar con nuevas fuentes de datos secundarias como Instagram para obtener el número de seguidores (esto dará una idea sobre la popularidad del artista).
 
 ## Sobre el código
-_Próximamente..._
+El código está estructurado de la siguiente manera:
+- Una clase main.py que orquesta todo el código, donde se llama a los métodos implementados en el resto de clases.
+- 
+Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
+Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_
+
+_En curso..._
 
 ## Lo último en el repositorio... (09/03/2024)
 Organización del repositorio con la nueva carpeta "Proyecto". \
