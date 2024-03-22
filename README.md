@@ -37,25 +37,7 @@ El código está estructurado de la siguiente manera:
    datos se han guardado en un formato con el que no podemos trabajar o hay varios eventos duplicados (todas las variables iguales:nombres,fechas...).
    Posteriormente creamos las clases necesarias como por ejemplo Spotify,Youtube para complementar nuestros datos con datos secundarios (los mencionados anteriormente).
 - La fase de extracción está dividida en varios módulos, uno por cada fuente utilizada: LastFM, Spotify, Wiki, YoutubeSubs
-  La 1ª fase de extraccion es usar la Api de Ticketmaster que nos permite adquirir un conjunto de datos de los próximo eventos que se van a realizar en España-
-  En un principio tenemos estas variables:
-  
-    name (String): nombre del evento
-    type (string): tipo del evento → la eliminamos por inutilidad
-    id (string): id del evento → la eliminamos por inutilidad
-    test (boolean): la eliminamos por monovalor
-    url (string): enlace a ticketmaster → la eliminamos por inutilidad
-    locale (string): localización (“es”) → la eliminamos por monovalor
-    images (diccionario de int y string): describe imágenes → la eliminamos por inutilidad
-    dates (diccionario de date): fechas inicio y final del evento, zona horaria
-    priceRanges (diccionario de string e int): precios mínimo y máximo del evento, tipo de precio, tipo de moneda*
-    _embedded (diccionario de string): contenedor con detalles del lugar, del evento (artista y links a páginas web relacionadas, clasificación…)
-    classifications (diccionario de string): clasificación del evento (género y subgénero)
-    sales (diccionario de date): fechas inicio y final de la venta
-    promoter (diccionario de string): promotor del evento
-    _links (diccionario de string): links a TicketMaster → la eliminamos por inutilidad
-    seatmap (string): mapa de asientos → la eliminamos por monovalor
-  
+  La 1ª fase de extraccion es usar la Api de Ticketmaster que nos permite adquirir un conjunto de datos de los próximo eventos que se van a realizar en España.
   En la 2º fase de estracción complementamos con datos secundarios gracias a la varable _embedded,que nos proporciona links a las siguientes páginas:
   
   Last.Fm.py: en este módulo, usamos la librería requests de Python que permite enviar solicitudes HTTP fácilmente. De aquí conseguimos el número de oyentes mensuales de los artistas.
