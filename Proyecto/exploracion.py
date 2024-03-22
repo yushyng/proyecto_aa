@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import missingno as msno
 
 
 class Exploracion:
@@ -45,5 +46,10 @@ class Exploracion:
         sns.heatmap(correlacion, annot=True, cmap='coolwarm', fmt=".2f")
         plt.title('Matriz de Correlación')
         plt.show()
+
+
+    def plot_missing_matrix(self):
+        """Genera el gráfico de matriz de ausencia"""
+        msno.matrix(self.dataframe)
 
 # Seguir probando nuevos métodos

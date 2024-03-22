@@ -140,6 +140,17 @@ print("Tiempo transcurrido:", tiempo_transcurrido, "segundos")
 tiempo_transcurrido = fin - inicio
 
 print("Tiempo transcurrido:", tiempo_transcurrido, "segundos")
+
+'''Integracion de la variable numNoches'''
+# Crea un objeto de la clase Integracion con tu DataFrame
+integracion_objeto = Integracion(df_total)
+
+# Llama al método calcular_nunoches en el objeto de la clase Integracion
+df_total = integracion_objeto.calcular_nunoches()
+
+# vemos que no existen este tipo de conciertos porque num_noches siempre vale 1, por lo que eliminamos la columna:
+df_total = df_total.drop(columns=["num_noches"])
+
 print("\nCONJUNTO DE DATOS FINAL")
 print(df_total)
 df_total.to_csv('df_total.csv', index=False)
@@ -155,4 +166,6 @@ print("\nEXPLORACIÓN DE LOS DATOS")
 explorador = Exploracion(df_final)
 explorador.visualizar_columnas()
 explorador.resumen()
-explorador.mostrar_muestra()
+explorador.matriz_correlacion()
+explorador.plot_missing_matrix()
+
