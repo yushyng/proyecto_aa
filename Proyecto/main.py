@@ -83,7 +83,7 @@ df_total['links'] = df_total.apply(lambda fila: limpieza.links(fila), axis=1)
 df_total['num_links'] = df_total.apply(lambda fila: limpieza.num_links(fila), axis=1)
 #print(df_total.iloc[0]['links']['spotify'][0]['url'])
 
-'''client_id = '3e082f0f2dd240c1beb66c9705a663a5'
+"""'''client_id = '3e082f0f2dd240c1beb66c9705a663a5'
 client_secret = 'd3dd1f7886eb4ba4aa5a76c9095120d7'
 spotify = Spotify(client_id, client_secret)
 
@@ -113,4 +113,6 @@ df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidore
 
 '''lastfm_client = LastFm("d3668e7b9ace955aaefafa6e262386ba")
 df_total['lastfm_url'] = df_total['links'].apply(lambda x: x['lastfm'][0]['url'] if x and 'lastfm' in x and isinstance(x['lastfm'], list) and len(x['lastfm']) > 0 else None)
-df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastf
+df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastf """
+
+#funciones comentadas con una breve descripción
