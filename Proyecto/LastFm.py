@@ -5,6 +5,9 @@ class LastFm:
         self.api_key = api_key
 
     def parse_abbr_to_int(self, abbr):
+        """LastFm devuelve el número de seguidores como una abreviatura de números en
+        formato 'K' (miles) o 'M' (millones) y con este método hacemos la conversirón
+        a números enteros."""
         if 'K' in abbr:
             return int(float(abbr.replace('K', '')) * 1000)
         elif 'M' in abbr:
@@ -13,6 +16,9 @@ class LastFm:
             return int(abbr)
 
     def obtener_seguidores_lastfm(self, url):
+        """Obtiene el número de seguidores de una cuenta de Last.fm dada su URL"""
+        """Cuando la solicitud "get" es exitosa, analiza el contenido HTML utilizando 
+        BeautifulSoup para encontrar la etiqueta <abbr> que contiene el número de seguidores."""
         if url is None:
             print("URL no proporcionada. No se pueden obtener seguidores.")
             return None
