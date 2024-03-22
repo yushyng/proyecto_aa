@@ -31,7 +31,8 @@ Se probó con la extracción de información de Google Trends, pero sin éxito. 
 ## Sobre el código
 El código está estructurado de la siguiente manera:
 - Una clase main.py que orquesta todo el código, donde se llama a los métodos implementados en el resto de clases.
-- 
+- La fase de extracción está dividida en varios archivos, uno por cada fuente utilizada: LastFM, Spotify, Wiki, YoutubeSubs
+- El archivo LimpiezaInicial
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
 Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_
 
