@@ -3,7 +3,8 @@ import pandas as pd
 
 def extraccionInicial():
     pag = 0
-    url = 'https://app.ticketmaster.com/discovery/v2/events?apikey=4uZ7cKblFpFckdrfHMGrT2coHBKCiAjs&countryCode=ES&classificationName=music&locale=*&page=' + str(
+    url = ('https://app.ticketmaster.com/discovery/v2/events?apikey=4uZ7cKblFpFckdrfHMGrT2coHBKCiAjs&countryCode=ES'
+           '&classificationName=music&locale=*&page=') + str(
         pag)
     r = requests.get(url)
 
@@ -13,8 +14,9 @@ def extraccionInicial():
         print(total_pages)
         df_datos = pd.DataFrame(respuesta['_embedded']['events'])
         pag += 1
-        while (pag < total_pages):
-            url = 'https://app.ticketmaster.com/discovery/v2/events?apikey=4uZ7cKblFpFckdrfHMGrT2coHBKCiAjs&countryCode=ES&classificationName=music&locale=*&page=' + str(
+        while pag < total_pages:
+            url = ('https://app.ticketmaster.com/discovery/v2/events?apikey=4uZ7cKblFpFckdrfHMGrT2coHBKCiAjs'
+                   '&countryCode=ES&classificationName=music&locale=*&page=') + str(
                 pag)
             r = requests.get(url)
             res = r.json()
