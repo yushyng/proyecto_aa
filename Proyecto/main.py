@@ -8,6 +8,7 @@ import time
 from extraccion.LastFm import LastFm
 from exploracion import Exploracion
 import requests
+import extraccion.VenueClass
 
 archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
             'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
