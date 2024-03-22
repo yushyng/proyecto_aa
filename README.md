@@ -33,8 +33,7 @@ Además, complementaremos esta información con otras fuentes de datos secundari
 El código está estructurado de la siguiente manera:
 - Una clase main.py que orquesta todo el código, donde se llama a los métodos implementados en el resto de clases.
    En el main se se importan las bibliotecas necesarias y nos descargamos los datos recopilados hasta el momento de la Api de ticketmaster, es decir los últimos eventos.
-   Tras descargar los datos, concatenamos todos los dataframe en uno solo y hacemos una limpieza llamando a los métodos de la clase LimpiezaInicial ya que, al haber descargado los 
-   datos se han guardado en un formato con el que no podemos trabajar o hay varios eventos duplicados (todas las variables iguales:nombres,fechas...).
+   Tras descargar los datos, concatenamos todos los dataframe en uno solo y hacemos una limpieza llamando a los métodos de la clase LimpiezaInicial.
    Posteriormente creamos las clases necesarias como por ejemplo Spotify,Youtube para complementar nuestros datos con datos secundarios (los mencionados anteriormente).
 - La fase de extracción está dividida en varios módulos, uno por cada fuente utilizada: LastFM, Spotify, Wiki, YoutubeSubs
   La 1ª fase de extraccion es usar la Api de Ticketmaster que nos permite adquirir un conjunto de datos de los próximo eventos que se van a realizar en España.
@@ -48,13 +47,7 @@ El código está estructurado de la siguiente manera:
   
   Spotify: con la librería requests conseguimos el número de seguidores en la plataforma de streaming de música de Spotify.
   
-- El archivo LimpiezaInicial:
-  Tenemos varios métodos:
-  Método corregir_json: Reemplaza comillas simples por comillas dobles y convierte las palabras 'True' y 'False' en minúsculas. Luego, carga el string corregido como un objeto JSON.
-  Método corregir_columnas: Aplica la función corregir_json() a las columnas especificadas del DataFrame df que contienen datos en formato JSON.
-  Con estado dos funciones podemos obtener variables como obtener_start_datetime, obtener_end_datetime, obtener_min_price, etc., 
-  Método arreglo_embeded: Similar a corregir_json, pero específicamente para la columna _embedded.
-  Métodos para obtener información específica sobre eventos: Estos métodos, como genre_event, subgenre_event, etc., extraen información específica sobre eventos dentro de la variable     _embedded.
+- El archivo LimpiezaInicial: Al haber descargado los datos de la API de ticketmaster se han guardado en un formato con el que no podemos trabajar o hay varios eventos duplicados (eliminamos las que tienen todas las variables iguales:nombres,fechas...) y además entraemos más variables que estan embedidad en la variable llamada _emebedded.
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
 Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_
 _En curso..._
