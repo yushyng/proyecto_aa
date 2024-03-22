@@ -4,3 +4,11 @@ python-dateutil==2.9.0.post0
 pytz==2024.1
 six==1.16.0
 tzdata==2024.1
+google-api-python-client
+
+# Numpy: biblioteca fundamental para la computación numérica en Python.
+# Pandas: biblioteca de análisis y manipulación de datos en Python.
+# Dateutil: biblioteca que proporciona funcionalidades para trabajar con fechas y horas en Python.
+# Pytz: biblioteca que proporciona funcionalidades para manejar zonas horarias en Python.
+# Six: biblioteca que proporciona herramientas para trabajar con código compatible con Python 2 y Python 3.
+# Googleapiclient: biblioteca permite a los desarrolladores acceder y utilizar los servicios y datos proporcionados por las API de Google
