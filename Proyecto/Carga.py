@@ -6,6 +6,8 @@ class Carga:
         self.df_total = None
 
     def cargar_archivos(self):
+        """Carga los archivos CSV especificados en la lista self.archivos y los concatena
+        en un solo DataFrame llamado self.df_total."""
         dataframes = []
         for archivo in self.archivos:
             df = pd.read_csv(archivo)
@@ -13,6 +15,8 @@ class Carga:
         self.df_total = pd.concat(dataframes, ignore_index=True)
 
     def limpiar_datos(self):
+        """Elimina filas duplicadas y columnas específicas que no se consideran
+        necesarias para el análisis."""
         if self.df_total is not None:
             num_duplicados = self.df_total.duplicated().sum()
             print("Filas duplicadas:", num_duplicados)
