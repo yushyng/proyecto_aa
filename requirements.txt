@@ -1,10 +1,18 @@
-﻿numpy==1.26.4
+﻿## Bibliotecas y sus versiones ##
+numpy==1.26.4
 pandas==2.2.1
 python-dateutil==2.9.0.post0
 pytz==2024.1
 six==1.16.0
 tzdata==2024.1
+
+## Paquetes (pip install) ##
 google-api-python-client
+beautifulsoup4
+matplotlib
+
+
+## Detalles de las bibliotecas y paquetes ##
 
 # Numpy: biblioteca fundamental para la computación numérica en Python.
 # Pandas: biblioteca de análisis y manipulación de datos en Python.

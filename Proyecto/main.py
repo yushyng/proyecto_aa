@@ -5,12 +5,14 @@ from Spotify import Spotify
 from Wiki import Wiki
 import time
 from LastFm import LastFm
+from exploracion import Exploracion
 import requests
 
 archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
             'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
             'csvs/adquisicion/d_28_02.csv', 'csvs/adquisicion/datos_5_03.csv']
 
+print("\nCARGA DEL CONJUNTO DE DATOS EN BRUTO")
 # Instanciar la clase y cargar los archivos
 cargador = Carga(archivos)
 cargador.cargar_archivos()
@@ -21,6 +23,8 @@ cargador.limpiar_datos()
 # Obtener el DataFrame total
 df_total = cargador.df_total
 print("Longitud del DataFrame total:", len(df_total))
+
+print("\nLIMPIEZA DEL CONJUNTO DE DATOS")
 limpieza = LimpiezaInicial()
 
 # Filtrar strings
@@ -45,7 +49,7 @@ df_total['promoter'] = df_total.apply(limpieza.obtener_promotor, axis=1)
 
 df_total = df_total.reset_index(drop=True)
 df_total = df_total.drop(columns=['sales', 'dates', 'classifications', 'priceRanges'])
-#Es probable que no encontremos información de los oyenetes de los géneros: Classical,
+# Es probable que no encontremos información de los oyenetes de los géneros: Classical,
 # Theatre, Fairs & Festivals. Esta será una de nuestras variables principales por lo que
 # al no tenerla no podremos usar estos datos como prueba.
 print(df_total)
@@ -60,7 +64,7 @@ df_total = LimpiezaInicial.arreglo_embeded(df_total)
 df_total['columna_json'] = df_total['_embedded'].apply(limpieza.load_json)
 
 print(df_total['columna_json'])
-print(len(df_total))
+#print(len(df_total))
 
 print("Nulos en la columna embdededd cambiada", df_total['columna_json'].isnull().sum())
 
@@ -68,7 +72,7 @@ df_total = df_total.dropna(subset=['columna_json'])
 
 #df_total['nameArtist'] = df_total.apply(LimpiezaInicial.name, axis=1).copy()
 df_total['nameArtist'] = df_total.apply(lambda fila: LimpiezaInicial().name(fila), axis=1).copy()
-print(df_total['nameArtist'].isnull().sum())
+print("Nulos en la columna nameArtist: ", df_total['nameArtist'].isnull().sum())
 
 df_total['genre'] = df_total.apply(lambda fila: limpieza.genre_event(fila), axis=1).copy()
 df_total['subgenre'] = df_total.apply(lambda fila: limpieza.subgenre_event(fila), axis=1).copy()
@@ -84,7 +88,7 @@ df_total['links'] = df_total.apply(lambda fila: limpieza.links(fila), axis=1)
 df_total['num_links'] = df_total.apply(lambda fila: limpieza.num_links(fila), axis=1)
 #print(df_total.iloc[0]['links']['spotify'][0]['url'])
 
-"""'''client_id = '3e082f0f2dd240c1beb66c9705a663a5'
+client_id = '3e082f0f2dd240c1beb66c9705a663a5'
 client_secret = 'd3dd1f7886eb4ba4aa5a76c9095120d7'
 spotify = Spotify(client_id, client_secret)
 
@@ -108,12 +112,28 @@ print(df_total['spotify_url'])
 df_total['spotify_url'] = df_total['spotify_url'].astype(str)
 
 # Aplicar la función obtener_seguidores_por_fila a cada fila de la columna 'spotify_url'
-df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidores_por_fila)'''
+df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidores_por_fila)
 
 
 
-'''lastfm_client = LastFm("d3668e7b9ace955aaefafa6e262386ba")
+lastfm_client = LastFm("d3668e7b9ace955aaefafa6e262386ba")
 df_total['lastfm_url'] = df_total['links'].apply(lambda x: x['lastfm'][0]['url'] if x and 'lastfm' in x and isinstance(x['lastfm'], list) and len(x['lastfm']) > 0 else None)
-df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastf """
+df_total['seguidoresLast'] = df_total['lastfm_url'].apply(lastfm_client.obtener_seguidores_lastfm)
 
-#funciones comentadas con 
+print("\nCONJUNTO DE DATOS FINAL")
+print(df_total)
+df_total.to_csv('df_total.csv', index=False)
+
+# IMPORTANTE: una vez ejecutado el código hasta aquí, comentarlo y
+# comenzar trabajando con "df_final" a partir la siguiente instrucción:
+df_final = pd.read_csv('df_final.csv')
+
+
+print("\nEXPLORACIÓN DE LOS DATOS")
+
+# Crear una instancia de la clase Exploracion y explorar el DataFrame
+explorador = Exploracion(df_total)
+explorador.visualizar_columnas()
+
+explorador.resumen()
+explorador.mostrar_muestra()
