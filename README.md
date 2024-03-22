@@ -59,9 +59,13 @@ El código está estructurado de la siguiente manera:
   En la 2º fase de estracción complementamos con datos secundarios gracias a la varable _embedded,que nos proporciona links a las siguientes páginas:
   
   Last.Fm.py: en este módulo, usamos la librería requests de Python que permite enviar solicitudes HTTP fácilmente. De aquí conseguimos el número de oyentes mensuales de los artistas.
+  
   Youtube.py: usando la Api de googleapiclient conseguimos el número de subscriptores de los artistas en youtube.
+  
   Wiki.py : utilizando la librería de Beautiful Soup, hacemos web-scrapping para tener una variables que nos permita saber cuántos premios ha ganado cada artista.
-  Spotify: con la librería requests conseguimos el número de seguidores en la plataforma de streaming de música de Spotify. 
+  
+  Spotify: con la librería requests conseguimos el número de seguidores en la plataforma de streaming de música de Spotify.
+  
 - El archivo LimpiezaInicial:
   Tenemos varios métodos:
   Método corregir_json: Reemplaza comillas simples por comillas dobles y convierte las palabras 'True' y 'False' en minúsculas. Luego, carga el string corregido como un objeto JSON.
