@@ -143,8 +143,7 @@ df_final = pd.read_csv('df_final.csv')
 print("\nEXPLORACIÓN DE LOS DATOS")
 
 # Crear una instancia de la clase Exploracion y explorar el DataFrame
-explorador = Exploracion(df_total)
+explorador = Exploracion(df_final)
 explorador.visualizar_columnas()
-
 explorador.resumen()
 explorador.mostrar_muestra()
