@@ -55,14 +55,5 @@ El código está estructurado de la siguiente manera:
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
 Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_ en la terminal del programa.
 
-## Lo último en el repositorio... (09/03/2024)
-Organización del repositorio con la nueva carpeta "Proyecto". \
-Esta carpeta contiene una subcarpeta para los csvs de antes y después del preprocesado, y las subcarpetas correspondientes a cada entrega.
-Los elementos de cada entrega son, de manera general:
- - Enunciado del problema en PDF
- - Memoria en WORD
- - Presentación en PDF
- - Código pertinente en IPYNB
- - Archivo resultante del código en CSV o PARQUET
- - Resumen de la entrega y planes de mejoras en TXT
- - Subcarpeta de "reentrega" donde solventamos los puntos tratados en el TXT
+## Otros...
+[Requirements.txt](��c)
