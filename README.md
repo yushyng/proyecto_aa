@@ -31,26 +31,29 @@ Además, complementaremos esta información con otras fuentes de datos secundari
 
 ## Sobre el código
 El código está estructurado de la siguiente manera:
-- Una clase main.py que orquesta todo el código, donde se llama a los métodos implementados en el resto de clases.
-   En el main se se importan las bibliotecas necesarias y nos descargamos los datos recopilados hasta el momento de la Api de ticketmaster, es decir los últimos eventos.
-   Tras descargar los datos, concatenamos todos los dataframe en uno solo y hacemos una limpieza llamando a los métodos de la clase LimpiezaInicial.
-   Posteriormente creamos las clases necesarias como por ejemplo Spotify,Youtube para complementar nuestros datos con datos secundarios (los mencionados anteriormente).
-- La fase de extracción está dividida en varios módulos, uno por cada fuente utilizada: LastFM, Spotify, Wiki, YoutubeSubs
-  La 1ª fase de extraccion es usar la Api de Ticketmaster que nos permite adquirir un conjunto de datos de los próximo eventos que se van a realizar en España.
-  En la 2º fase de estracción complementamos con datos secundarios gracias a la varable _embedded,que nos proporciona links a las siguientes páginas:
+- Una clase main.py que orquesta todo el código, donde se importan las bibliotecas necesarias y se pone en funcionamiento el programa (carga, extracción, concatenación, limpieza...) llamando a los métodos implementados en el resto de clases.
+
+- La fase de extracción está dividida en varios módulos, uno por cada fuente utilizada: Ticketmaster, LastFM, Spotify, Wiki, YoutubeSubs
+
+  La 1ª fase de extracción es usar la API de Ticketmaster, que nos permite adquirir un conjunto de datos de los próximo eventos que se van a realizar en España.
+  En Ticketmaster.py hacemos la extracción de cada banco de datos, en Carga.py los juntamos y limpiamos las filas duplicadas.
   
-  Last.Fm.py: en este módulo, usamos la librería requests de Python que permite enviar solicitudes HTTP fácilmente. De aquí conseguimos el número de oyentes mensuales de los artistas.
+  En la 2º fase de extracción, complementamos con datos secundarios gracias a la variable _embedded, que nos proporciona links a las siguientes páginas:
   
-  Youtube.py: usando la Api de googleapiclient conseguimos el número de subscriptores de los artistas en youtube.
+  LastFm.py: en este módulo, usamos la librería requests de Python para extraer el número de oyentes mensuales de los artistas.
   
-  Wiki.py : utilizando la librería de Beautiful Soup, hacemos web-scrapping para tener una variables que nos permita saber cuántos premios ha ganado cada artista.
+  Youtube.py: usando la API de googleapiclient extraemos el número de subscriptores de los artistas en Youtube.
   
-  Spotify: con la librería requests conseguimos el número de seguidores en la plataforma de streaming de música de Spotify.
+  Wiki.py : utilizando la librería de Beautiful Soup, hacemos web-scrapping para extraer cuántos premios ha ganado cada artista.
   
-- El archivo LimpiezaInicial: Al haber descargado los datos de la API de ticketmaster se han guardado en un formato con el que no podemos trabajar o hay varios eventos duplicados (eliminamos las que tienen todas las variables iguales:nombres,fechas...) y además entraemos más variables que estan embedidad en la variable llamada _emebedded.
+  Spotify: con la librería requests, conseguimos extraer el número de seguidores en la plataforma de streaming de música de Spotify.
+
+  Además, tenemos VenueClass.py, donde obtenemos una nueva variable "VenueClass" que indica el tipo de recinto donde se realiza el evento: sala, teatro, estadio S o estadio M, en función del tamaño del mismo.
+  
+- El archivo LimpiezaInicial: Al haber descargado los datos de la API de Ticketmaster, vemos que se han guardado en un formato con el que no podemos trabajar o hay varios eventos duplicados, por lo que arreglamos estos problemas (eliminamos las que tienen todas las variables iguales: nombres,fechas...) y, además, extraemos más variables que estan embedidas en la variable "_embedded".
+
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
-Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_
-_En curso..._
+Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_ en la terminal del programa.
 
 ## Lo último en el repositorio... (09/03/2024)
 Organización del repositorio con la nueva carpeta "Proyecto". \
