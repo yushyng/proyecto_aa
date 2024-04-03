@@ -1,3 +1,4 @@
+from Proyecto.integracion import Integracion
 from extraccion.Carga import Carga
 from LimpiezaInicial import LimpiezaInicial
 from extraccion.YoutubeSubs import YoutubeSubs
@@ -103,6 +104,7 @@ df_total['spotify_url'] = df_total['links'].apply(lambda x: x['spotify'][0]['url
 df_total['spotify_url'] = df_total['spotify_url'].astype(str)
 # Aplicar la función obtener_seguidores_por_fila a cada fila de la columna 'spotify_url'
 df_total['seguidores'] = df_total['spotify_url'].apply(spotify.obtener_seguidores_por_fila)
+print(df_total['seguidores'])
 df_total['popularidad'] = df_total['spotify_url'].apply(spotify.obtener_popularidad_por_fila)
 df_total['GéneroArtista'] = df_total['spotify_url'].apply(spotify.obtener_generosArtistas_por_fila)
 
@@ -165,7 +167,4 @@ print("\nEXPLORACIÓN DE LOS DATOS")
 # Crear una instancia de la clase Exploracion y explorar el DataFrame
 explorador = Exploracion(df_final)
 explorador.visualizar_columnas()
-explorador.resumen()
-explorador.matriz_correlacion()
-explorador.plot_missing_matrix()
-
+explorador.r
