@@ -1,3 +1,4 @@
+from Proyecto.LimpiezFinal import LimpiezaFinal
 from Proyecto.integracion import Integracion
 from extraccion.Carga import Carga
 from LimpiezaInicial import LimpiezaInicial
@@ -149,22 +150,29 @@ integracion_objeto = Integracion(df_total)
 
 # Llama al método calcular_nunoches en el objeto de la clase Integracion
 df_total = integracion_objeto.calcular_nunoches()
-
 # vemos que no existen este tipo de conciertos porque num_noches siempre vale 1, por lo que eliminamos la columna:
 df_total = df_total.drop(columns=["num_noches"])
 
 print("\nCONJUNTO DE DATOS FINAL")
 print(df_total)
-df_total.to_csv('df_total.csv', index=False)
+df_total.to_csv('df_3.csv', index=False)
+
 
 # IMPORTANTE: una vez ejecutado el código hasta aquí, comentarlo y
 # comenzar trabajando con "df_final" a partir la siguiente instrucción:
-df_final = pd.read_csv('df_final.csv')
 
+print("\nLIMPIEZA DE LOS DATOS")
+df=pd.read_csv('df3.csv')
+dfprueba = LimpiezaFinal(df)
+# Suponiendo que df3 es tu DataFrame
+# Guardar el DataFrame como un archivo CSV en el directorio de trabajo actual
+dfprueba.to_csv('dfprueba.csv', index=False)
 
 print("\nEXPLORACIÓN DE LOS DATOS")
-
+df=pd.read_csv('dfprueba.csv')
 # Crear una instancia de la clase Exploracion y explorar el DataFrame
-explorador = Exploracion(df_final)
+explorador = Exploracion(df)
 explorador.visualizar_columnas()
-explorador.r
+explorador.resumen()
+explorador.matriz_correlacion()
+explorador.plot_missing_matrix()
