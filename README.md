@@ -54,3 +54,7 @@ El código está estructurado de la siguiente manera:
 
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
 Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_ en la terminal del programa.
+
+```
+git clone https://github.com/yushyng/proyecto_aa.git
+```
