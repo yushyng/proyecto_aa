@@ -1,3 +1,6 @@
+import re
+from bs4 import BeautifulSoup
+from datetime import datetime
 class Integracion:
     def _init_(self, dataframe):
         self.dataframe = dataframe
@@ -87,6 +90,47 @@ class Integracion:
         df['tiene_lastfm_url'] = df['lastfm_url'].notna().astype(int)
         return df
 
+    def obtener_edad_desde_wikipedia(url_wikipedia):
+        # Realizar la solicitud HTTP
+        response = requests.get(url_wikipedia)
+
+        # Comprobar si la solicitud fue exitosa
+        if response.status_code == 200:
+            # Analizar el HTML de la página
+            soup = BeautifulSoup(response.text, 'html.parser')
+
+            # Buscar la sección que contiene la fecha de nacimiento
+            infobox = soup.find('table', {'class': 'infobox'})
+            if infobox:
+                fecha_nacimiento_tag = infobox.find(text=re.compile(r'\b\d+\s+años\b'))
+                if fecha_nacimiento_tag:
+                    # Obtener el texto que contiene el número de años
+                    texto = fecha_nacimiento_tag.strip()
+
+                    # Extraer el número de años utilizando expresiones regulares
+                    patron = r'\b(\d+)\s+años\b'
+                    resultado = re.search(patron, texto)
+
+                    # Si se encuentra el número de años, calcular la edad
+                    if resultado:
+                        numero_anios = int(resultado.group(1))
+
+                        # Obtener la fecha actual
+                        fecha_actual = datetime.now()
+
+                        # Calcular el año de nacimiento
+                        ano_nacimiento = fecha_actual.year - numero_anios
+
+                        # Devolver la edad
+                        return fecha_actual.year - ano_nacimiento
+                    else:
+                        return None
+                else:
+                    return None
+            else:
+                return None
+        else:
+            return None
 
 
 

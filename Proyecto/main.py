@@ -156,6 +156,8 @@ df_total = df_total.drop(columns=["num_noches"])
 df_total = integracion_objeto.calcular_dias_venta(df_total)
 # Llama al método agregar_total_promotor en el objeto de la clase Integracion para tener el peso del promotor
 df_total = integracion_objeto.agregar_total_promotor(df_total)
+#Llama al método para generar la edad del cantante a partir de la url de Wikipedia
+df_total['Edad'] = df_total['wiki_url'].apply(lambda x: integracion_objeto.obtener_edad_desde_wikipedia(x) if pd.notna(x) else None)
 
 '''Vamos a considerar cambair la variable seguidoresLast por otra binaria que nos
  diga si tiene enlace a las o no. Para ello primero cuantos son 0 o nulos en un principio, 
