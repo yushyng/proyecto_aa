@@ -151,6 +151,7 @@ integracion_objeto = Integracion(df_total)
 # Llama al método calcular_nunoches en el objeto de la clase Integracion
 df_total = integracion_objeto.calcular_nunoches()
 df_total = integracion_objeto.calcular_dias_venta(df_total)
+df_total = integracion_objeto.agregar_total_promotor(df_total)
 # vemos que no existen este tipo de conciertos porque num_noches siempre vale 1, por lo que eliminamos la columna:
 df_total = df_total.drop(columns=["num_noches"])
 

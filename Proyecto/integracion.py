@@ -50,6 +50,7 @@ class Integracion:
 
     import pandas as pd
 
+    '''Variable que nos dice cúantos dias entan en venta unas entradas'''
     def calcular_dias_venta(df):
         # Convertir las cadenas de fecha en objetos de fecha y hora
         df['SalesStart'] = pd.to_datetime(df['sales_datetime'])
@@ -60,5 +61,18 @@ class Integracion:
 
         # Mostrar el DataFrame resultante
         return df
+
+    import pandas as pd
+
+    def agregar_total_promotor(df):
+        # Calcular la frecuencia de cada promotor en la columna 'promotor'
+        frecuencia_promotores = df['promoter'].value_counts()
+
+        # Mapear los recuentos de frecuencia a cada fila correspondiente
+        df['total_promotor'] = df['promoter'].map(frecuencia_promotores)
+
+        return df
+
+
 
 
