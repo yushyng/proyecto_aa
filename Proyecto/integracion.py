@@ -47,3 +47,18 @@ class Integracion:
         self.dataframe = self.dataframe.reset_index(drop=True)
 
         return self.dataframe
+
+    import pandas as pd
+
+    def calcular_dias_venta(df):
+        # Convertir las cadenas de fecha en objetos de fecha y hora
+        df['SalesStart'] = pd.to_datetime(df['sales_datetime'])
+        df['SalesEnd'] = pd.to_datetime(df['end_datetime'])
+
+        # Calcular la diferencia entre las fechas y almacenarla en una nueva columna
+        df['DiasVenta'] = (df['SalesEnd'] - df['SalesStart']).dt.days
+
+        # Mostrar el DataFrame resultante
+        return df
+
+
