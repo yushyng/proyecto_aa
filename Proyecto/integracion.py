@@ -69,8 +69,22 @@ class Integracion:
         frecuencia_promotores = df['promoter'].value_counts()
 
         # Mapear los recuentos de frecuencia a cada fila correspondiente
-        df['total_promotor'] = df['promoter'].map(frecuencia_promotores)
+        df['peso_promotor'] = df['promoter'].map(frecuencia_promotores)
 
+        return df
+
+    def agregar_columna_tiene_lastfm_url(df):
+        """
+        Agrega una nueva columna llamada 'tiene_lastfm_url' al DataFrame df.
+        La columna tendrá valor 1 si lastfm_url no es NaN, 0 de lo contrario.
+
+        Parámetros:
+            df (DataFrame): El DataFrame al que se agregará la columna.
+
+        Retorna:
+            DataFrame: El DataFrame con la nueva columna agregada.
+        """
+        df['tiene_lastfm_url'] = df['lastfm_url'].notna().astype(int)
         return df
 
 

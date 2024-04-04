@@ -150,10 +150,22 @@ integracion_objeto = Integracion(df_total)
 
 # Llama al método calcular_nunoches en el objeto de la clase Integracion
 df_total = integracion_objeto.calcular_nunoches()
-df_total = integracion_objeto.calcular_dias_venta(df_total)
-df_total = integracion_objeto.agregar_total_promotor(df_total)
 # vemos que no existen este tipo de conciertos porque num_noches siempre vale 1, por lo que eliminamos la columna:
 df_total = df_total.drop(columns=["num_noches"])
+# Llama al método calcular_dias_venta en el objeto de la clase Integracion
+df_total = integracion_objeto.calcular_dias_venta(df_total)
+# Llama al método agregar_total_promotor en el objeto de la clase Integracion para tener el peso del promotor
+df_total = integracion_objeto.agregar_total_promotor(df_total)
+
+'''Vamos a considerar cambair la variable seguidoresLast por otra binaria que nos
+ diga si tiene enlace a las o no. Para ello primero cuantos son 0 o nulos en un principio, 
+si el número es muy grande vamos a decidir cambiarlo.'''
+# Contar los valores NaN y 0 en la columna 'seguidoresLast'
+total_nan_zero = df_total['seguidoresLast'].isna().sum() + (df_total['seguidoresLast'] == 0).sum()
+
+print("Total de valores NaN y 0 en la columna 'seguidoresLast':", total_nan_zero)
+#Como son 440 valores NAn o 0 vamos crear una variable que solo nos diga si tiene enlace a fast.fm o no
+df_total = integracion_objeto.agregar_columna_tiene_lastfm_url(df_total)
 
 print("\nCONJUNTO DE DATOS FINAL")
 print(df_total)
