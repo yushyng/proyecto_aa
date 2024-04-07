@@ -158,6 +158,8 @@ df_total = integracion_objeto.calcular_dias_venta(df_total)
 df_total = integracion_objeto.agregar_total_promotor(df_total)
 #Llama al método para generar la edad del cantante a partir de la url de Wikipedia
 df_total['Edad'] = df_total['wiki_url'].apply(lambda x: integracion_objeto.obtener_edad_desde_wikipedia(x) if pd.notna(x) else None)
+#LLama al método para generar los dias desde el fin de la venta de entradas y el comienzo del concierto
+df_total = integracion_objeto.calcular_dias_desde_finVenta(df_total)
 
 '''Vamos a considerar cambair la variable seguidoresLast por otra binaria que nos
  diga si tiene enlace a las o no. Para ello primero cuantos son 0 o nulos en un principio, 

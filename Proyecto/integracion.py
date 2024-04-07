@@ -1,4 +1,7 @@
 import re
+
+import pandas as pd
+import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 class Integracion:
@@ -132,5 +135,10 @@ class Integracion:
         else:
             return None
 
+    #Funcion para crear la variable dias_desde_finVenta
+    def calcular_dias_desde_finVenta(df):
+        df['startDateTime'] = pd.to_datetime(df['startDateTime'])
+        df['dias_desde_finVenta'] = (df['startDateTime'] - df['end_datetime']).dt.days
+        return df
 
 
