@@ -23,6 +23,8 @@ git clone https://github.com/yushyng/proyecto_aa.git
 
 El proyecto se desarrollará con PyCharm. Por ello, recomendamos tener descargado este entorno de desarrollo. Asegúrate de tener instalado un intérpetre de Python 3.9 o una versión superior.
 
+Para descargar los datos de Google Drive ejecutar el scrpit dentro de la carpeta data habiendo descargado tambíen el fichero de texto.
+
 Antes de comenzar a trabajar, realiza un _pull_ para bajarte la última versión del proyecto. Recomendamos también la realización de _commits_ periódicos para mantener a salvo cualquier cambio elaborado (no esperes a tener el código terminado para hacer _commit_). Y después de un _commit_, hacer un _push_ (existe la opción de hacer ambas cosas juntas en un solo paso).
 
 ## Sobre las fuentes de datos
