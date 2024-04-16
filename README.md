@@ -32,9 +32,9 @@ Antes de comenzar a trabajar, realiza un _pull_ para bajarte la última versión
 
 Además, complementaremos esta información con otras fuentes de datos secundarias como son:
 - [Spotify](https://open.spotify.com/intl-es): número de seguidores actuales
-- [Last.FM](https://www.last.fm/es/): número de oyentes mensuales
 - [Wikipedia](https://es.wikipedia.org/wiki/Wikipedia:Portada): número de premios ganados
 - [Youtube](https://www.youtube.com/): número de subscriptores
+Cuyos links podemos obtener del propio TicketMaster.
 
 
 ## Sobre el código
