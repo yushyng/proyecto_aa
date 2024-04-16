@@ -39,7 +39,7 @@ Cuyos links podemos obtener del propio TicketMaster.
 
 ## Sobre la estructura del código
 El código está estructurado de la siguiente manera:
-Tenmos varias carpetas que corresponden con las fases de Adquisicion y preprocesamiento de los datos de Ticketmaster.
+Tenemos varias carpetas que corresponden con las fases de Adquisicion y preprocesamiento de los datos de Ticketmaster.
 
 La parte de Adquisicion tiene su propia carpeta , con su propio módulo main, que hace llamada a las funciones para adquirir información de los eventos desde la api de Ticketmaster.
 
@@ -51,7 +51,7 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
   variables de la información que nos proporcionaba la API.
   
 - Carpeta Integracion:
-- 
+  
   La fase de integracion de nuevas variables está dividida en varios módulos, uno por cada fuente utilizada: Ticketmaster, LastFM, Spotify, Wiki, YoutubeSubs, cuyas urls nos    
   proporciona Ticketmaster.
   
