@@ -1,7 +1,7 @@
 import json
 
 
-class LimpiezaInicial:
+class Extraccion:
     def __init__(self):
         self.df_total = None
 
@@ -170,3 +170,4 @@ class LimpiezaInicial:
         else:
             return len(fila['links'].keys())
 
+   

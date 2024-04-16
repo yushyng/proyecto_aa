@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
-
-def extraccionInicial():
+#Funcion que hemos usado para extraer la información de la API de Ticketmaster
+def TicketMasterAdquisicion():
     pag = 0
     url = ('https://app.ticketmaster.com/discovery/v2/events?apikey=4uZ7cKblFpFckdrfHMGrT2coHBKCiAjs&countryCode=ES'
            '&classificationName=music&locale=*&page=') + str(

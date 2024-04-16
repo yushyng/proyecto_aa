@@ -1,6 +1,6 @@
 from Proyecto.LimpiezFinal import LimpiezaFinal
 from Proyecto.integracion import Integracion
-from extraccion.Carga import Carga
+from src.Limpieza.Carga import Carga
 from LimpiezaInicial import LimpiezaInicial
 from extraccion.YoutubeSubs import YoutubeSubs
 from extraccion.Spotify import Spotify
@@ -52,6 +52,7 @@ df_total['subgnero'] = df_total.apply(limpieza.obtener_subgenero, axis=1)
 df_total['promoter'] = df_total.apply(limpieza.obtener_promotor, axis=1)
 
 df_total = df_total.reset_index(drop=True)
+#Eliminamos las columnas que hemos usado para extraer las variables anteriores
 df_total = df_total.drop(columns=['sales', 'dates', 'classifications', 'priceRanges'])
 # Es probable que no encontremos información de los oyenetes de los géneros: Classical,
 # Theatre, Fairs & Festivals. Esta será una de nuestras variables principales por lo que
