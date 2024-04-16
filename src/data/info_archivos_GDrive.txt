@@ -10,3 +10,4 @@
 1tUxQv2F7SGfBHsY2ZQ3txuRnXeqh1E70, df_final.csv, data
 1jMQisr47gDq6rgSNIA6jnnBGxg_XmfLN, df_predecir_max.csv, data
 1AX34vRw93vC3houg0tiwvTX3qpK-kTwy, df_predecir_min.csv, data
+14H1qfKOgxLA_9BjxT3Yzb98xd8m2jUfA, df_final.parquet, data
