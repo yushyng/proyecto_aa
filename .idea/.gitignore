@@ -19,3 +19,6 @@ node_modules
 
 # Ignorar archivos correspondientes a R
 .Rhistory
+
+# Ignorar otras cosas
+SECURITY.md
