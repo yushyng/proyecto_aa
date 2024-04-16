@@ -82,5 +82,5 @@ df_total['VenueCountry'] = df_total.apply(lambda fila: extraccion.venue_country(
 df_total['links'] = df_total.apply(lambda fila: extraccion.links(fila), axis=1)
 df_total['num_links'] = df_total.apply(lambda fila: extraccion.num_links(fila), axis=1)
 
-#Descarga del dataframe tras el proceso de carga
+#Descarga del dataframe tras el proceso de extraccion
 df_total.to_csv('dfExtraccion.csv', index=False)

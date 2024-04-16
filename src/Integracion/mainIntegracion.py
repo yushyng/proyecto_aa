@@ -7,8 +7,8 @@ from VenueClass import venueClass
 from LastFm import LastFm
 import time
 
-# Lee el archivo CSV despúes de Carga
-df_total = pd.read_csv('dfCarga.csv')
+# Lee el archivo CSV despúes de Extraccion
+df_total = pd.read_csv('dfExtraccion.csv')
 
 #Categorizamos el lugar del evento
 df_processed = venueClass(df_total)
@@ -97,6 +97,12 @@ df_total['Generos_combinados'] = df_total.apply(integracion.combinar_y_limpiar_g
 
 df_total['conciertos_del_artista_en_ciudad'] = df_total.groupby(['nameArtist', 'VenueCity'])['name'].transform('count')
 
-
-#Descarga del dataframe tras el proceso de carga
+#Vamos a convertir la variable "Generos_combinados" en una serie de variables dummies para poder introducir al modelo.
+# Dividir los géneros combinados y crear columnas binarias para cada género
+generos_binarios = df['Generos_combinados'].str.get_dummies(sep=',')
+generos_binarios
+# Concatenar el DataFrame original con el nuevo DataFrame de columnas binarias
+df = pd.concat([df, generos_binarios], axis=1)
+df
+#Descarga del dataframe tras el proceso de Integracion
 df_total.to_csv('dfIntegracion.csv', index=False)
