@@ -1,1 +1,12 @@
-
+1AngMVU1JbXKSgW-pHeMKMmmyVvov4gy2, d_1_03.csv, data
+1ZzUwrwgpFnPkK3pXMf10FkYW_jpfKPej, d_17_02.csv, data
+1yYhFMSwbKmWcqgLK47CJYakHloNVTNib, d_21_02.csv, data
+1auF2WfwKBTFU4dOnq9FkOKAyJjlTpQha, d_26_02.csv, data
+1A_ZLCSJpKw4HkKgLtYqxM6dSXb9F8oH0, d_28_02.csv, data
+1gUK6oQnUqAGXQZJcMRN0Op74c3xJd6Qe, datos_4_03.csv, data
+1opojiDJkxPc6a1ZKBUlRNaTq9a_0LabB, df_extraccion.csv, data
+1I_-7DT9Wj8BQsA28b_on3tRg0BmrmXMQ, df_edad.csv, data
+1e04YULWIhQB7yBF3cEgpSLZa3h_6yfJS, df_exploracion.csv, data
+1tUxQv2F7SGfBHsY2ZQ3txuRnXeqh1E70, df_final.csv, data
+1jMQisr47gDq6rgSNIA6jnnBGxg_XmfLN, df_predecir_max.csv, data
+1AX34vRw93vC3houg0tiwvTX3qpK-kTwy, df_predecir_min.csv, data
