@@ -45,7 +45,8 @@ La parte de Adquisicion tiene su propia carpeta , con su propio módulo main, qu
 
 Respecto a la parte de Preprocesamiento, se dividen en varias fases o carpetas.
 Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main de manera que cada fase puede ser ejecutada independientemente siempre y cuando se tenga en mano el conjunto de datos en formato csv.
--Carpeta Extracción:
+
+- Carpeta Extracción:
 
   Desde el mainExtraccion.py se llama a los modulos Carga.py, que junta los datos recopilados en un periodo de tiempo en un único csv, y Extraccion.py que extraen las posibles    
   variables de la información que nos proporcionaba la API.
