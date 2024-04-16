@@ -48,8 +48,7 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
 
 - Carpeta Extracción:
 
-  Desde el mainExtraccion.py se llama a los modulos Carga.py, que junta los datos recopilados en un periodo de tiempo en un único csv, y Extraccion.py que extraen las posibles    
-  variables de la información que nos proporcionaba la API.
+  Desde el mainExtraccion.py se llama a los modulos Carga.py, que junta los datos recopilados en un periodo de tiempo en un único csv, y Extraccion.py que extraen las posibles variables de la información que nos proporcionaba la API.
   
 - Carpeta Integracion:
   
