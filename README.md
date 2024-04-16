@@ -37,16 +37,23 @@ Además, complementaremos esta información con otras fuentes de datos secundari
 Cuyos links podemos obtener del propio TicketMaster.
 
 
-## Sobre el código
+## Sobre la estructura del código
 El código está estructurado de la siguiente manera:
-- Una clase main.py que orquesta todo el código, donde se importan las bibliotecas necesarias y se pone en funcionamiento el programa (carga, extracción, concatenación, limpieza...) llamando a los métodos implementados en el resto de clases.
+Tenmos varias carpetas que corresponden con las fases de Adquisicion y preprocesamiento de los datos de Ticketmaster.
 
-- La fase de extracción está dividida en varios módulos, uno por cada fuente utilizada: Ticketmaster, LastFM, Spotify, Wiki, YoutubeSubs
+La parte de Adquisicion tiene su propia carpeta , con su propio módulo main, que hace llamada a las funciones para adquirir información de los eventos desde la api de Ticketmaster.
 
-  La 1ª fase de extracción es usar la API de Ticketmaster, que nos permite adquirir un conjunto de datos de los próximo eventos que se van a realizar en España.
-  En Ticketmaster.py hacemos la extracción de cada banco de datos, en Carga.py los juntamos y limpiamos las filas duplicadas.
+Respecto a la parte de Preprocesamiento, se dividen en varias fases o carpetas.
+Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main de manera que cada fase puede ser ejecutada independientemente siempre y cuando se tenga en mano el conjunto de datos en formato csv.
+-Carpeta Extracción:
+
+  Desde el mainExtraccion.py se llama a los modulos Carga.py, que junta los datos recopilados en un periodo de tiempo en un único csv, y Extraccion.py que extraen las posibles    
+  variables de la información que nos proporcionaba la API.
   
-  En la 2º fase de extracción, complementamos con datos secundarios gracias a la variable _embedded, que nos proporciona links a las siguientes páginas:
+- Carpeta Integracion:
+- 
+  La fase de integracion de nuevas variables está dividida en varios módulos, uno por cada fuente utilizada: Ticketmaster, LastFM, Spotify, Wiki, YoutubeSubs, cuyas urls nos    
+  proporciona Ticketmaster.
   
   LastFm.py: en este módulo, usamos la librería requests de Python para extraer el número de oyentes mensuales de los artistas.
   
@@ -56,9 +63,19 @@ El código está estructurado de la siguiente manera:
   
   Spotify: con la librería requests, conseguimos extraer el número de seguidores en la plataforma de streaming de música de Spotify.
 
-  Además, tenemos VenueClass.py, donde obtenemos una nueva variable "VenueClass" que indica el tipo de recinto donde se realiza el evento: sala, teatro, estadio S o estadio M, en función del tamaño del mismo.
+  Además, tenemos VenueClass.py, donde obtenemos una nueva variable "VenueClass" que indica el tipo de recinto donde se realiza el evento: sala, teatro, estadio S o estadio M, en 
+  función del tamaño del mismo.
+  Se integran también nuevas variables binarias y variables que conseguimos a partir de otras.
+  Todos estos módulos se llamarán desde el propio main de la carpeta llamada mainIntegración. 
+
+- Carpeta Limpieza:
   
-- El archivo LimpiezaInicial: Al haber descargado los datos de la API de Ticketmaster, vemos que se han guardado en un formato con el que no podemos trabajar o hay varios eventos duplicados, por lo que arreglamos estos problemas (eliminamos las que tienen todas las variables iguales: nombres,fechas...) y, además, extraemos más variables que estan embedidas en la variable "_embedded".
+  Esta carpeta se encarga de limpiar el conjunto de datos ya sea debido a los duplicados, nulos o los posibles outliers o valores atípicos. Además de realizar una corrección o 
+   normalización de las variables.
+- Carpeta Exploracion:
+
+  Este módulo se encarga de realizar una exploración profunda de los datos como es estudiar las correlaciones entre las variables ya sean numéricas o categóricas y de estudiar los    
+  outliers, además del rango de nuestras variables objetivo. Visualizaremos varias graficas para mejorar el entendimiento y el comportamiento de los datos.
 
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
 Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_ en la terminal del programa.
