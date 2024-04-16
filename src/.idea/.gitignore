@@ -16,3 +16,9 @@ node_modules
 
 # Ignorar archivos de configuración SASS
 .sass-cache
+
+# Ignorar archivos correspondientes a R
+.Rhistory
+
+# Ignorar otras cosas
+SECURITY.md
