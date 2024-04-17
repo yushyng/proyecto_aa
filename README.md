@@ -31,9 +31,8 @@ Antes de comenzar a trabajar, realiza un _pull_ para bajarte la última versión
 [TicketMaster](https://www.ticketmaster.es/?utm_source=TM-google&utm_medium=cpc&utm_campaign=co:ES+%7C+an:Pure+Brand+%7C+obj:Sales+%7C+chl:Gb+%7C+cat:Branded+%7C+bud:TM+%7C+a:B1+%7C+tp:TMES+%7C+pn:+%7C+p:+%7C+ag:+%7C+fc:Manual+%7C+lc:ES&utm_content=paid&awtrc=true&utm_source=TM-google&camefrom=%7B%7Bcampaign.name%7D%7D&awtrc=true&gad_source=1&gclid=CjwKCAjwzN-vBhAkEiwAYiO7oNkvHFfNBeLpD6kto_Xb09hfWnR9rEUHBd3_2zWZUXSMJfMmf59B8BoCDlwQAvD_BwE&gclsrc=aw.ds) será la fuente principal de donde obtendremos todos los datos "base" para realizar el proyecto (nombre y tipo del evento, artista, fechas de realización, fechas de venta, precios fijados por TicketMaster, género y subgénero del concierto, promotor y detalles del lugar). 
 
 Además, complementaremos esta información con otras fuentes de datos secundarias como son:
-- [Spotify](https://open.spotify.com/intl-es): número de seguidores actuales
-- [Wikipedia](https://es.wikipedia.org/wiki/Wikipedia:Portada): número de premios ganados
-- [Youtube](https://www.youtube.com/): número de subscriptores
+- [Spotify](https://open.spotify.com/intl-es): número de seguidores actuales.
+- [Youtube](https://www.youtube.com/): número de subscriptores.
 Cuyos links podemos obtener del propio TicketMaster.
 
 
