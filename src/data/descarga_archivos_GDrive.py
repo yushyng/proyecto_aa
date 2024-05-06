@@ -81,7 +81,7 @@ def procesar_archivo_info(ruta_archivo_info):
 ## Ejemplo de uso
 
 # Ruta al archivo que contiene la información de los archivos a descargar
-ruta_archivo_info = '.\proyecto_aa\src\data\info_archivos_GDrive.txt'
+ruta_archivo_info = '/Users/yushanyang/Desktop/proyecto_aa/src/data/info_archivos_GDrive.txt'
 
 # Obtenemos la lista con la info de los archivos del fichero
 archivos_a_descargar = procesar_archivo_info(ruta_archivo_info)

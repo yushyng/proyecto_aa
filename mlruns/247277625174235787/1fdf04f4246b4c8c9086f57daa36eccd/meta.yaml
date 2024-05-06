@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/247277625174235787/1fdf04f4246b4c8c9086f57daa36eccd/artifacts
+end_time: 1715010033982
+entry_point_name: ''
+experiment_id: '247277625174235787'
+lifecycle_stage: active
+run_id: 1fdf04f4246b4c8c9086f57daa36eccd
+run_name: RandomForestRegressor
+run_uuid: 1fdf04f4246b4c8c9086f57daa36eccd
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1715010031319
+status: 3
+tags: []
+user_id: yushanyang

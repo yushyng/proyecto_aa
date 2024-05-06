@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/247277625174235787
+creation_time: 1715009639606
+experiment_id: '247277625174235787'
+last_update_time: 1715009639606
+lifecycle_stage: active
+name: Random search MaxPrice

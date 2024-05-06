@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/yushanyang/Desktop/proyecto_aa/modelos/mlruns/292424688864176730/8f1cceeaaae445d5928eca293b904a6a/artifacts
+end_time: 1714993259146
+entry_point_name: ''
+experiment_id: '292424688864176730'
+lifecycle_stage: active
+run_id: 8f1cceeaaae445d5928eca293b904a6a
+run_name: RandomForestRegressor
+run_uuid: 8f1cceeaaae445d5928eca293b904a6a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714993256389
+status: 3
+tags: []
+user_id: yushanyang
