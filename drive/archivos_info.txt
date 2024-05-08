@@ -1,0 +1,2 @@
+1cUDsJWr2OMli6RctQGGzjJhc2q-fvNt4,DATOS_MIN.parquet,./datos
+11TwKQ3rXAfoNGEO76q1NTWZwk40Gi1U1,DATOS_MAX.parquet,./datos
