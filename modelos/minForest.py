@@ -79,12 +79,31 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
+
+import os
+import sys
+
+# Añadimos la carpeta 'drive' al path
+ruta_carpeta_drive = os.path.abspath('../drive') #.. era para salirse de la carpeta actual y entrar en la de drive
+if ruta_carpeta_drive not in sys.path:
+    sys.path.insert(0, ruta_carpeta_drive)
+
+import drive
+
+# Descargamos los datos en formato parquet de Google Drive
+# guardar localmente
+drive.descargar_archivos_concretos('DATOS_MIN.parquet', './drive')
+#hay que pasarle la ruta a la carpeta drive desde donde lo estamos ejecutando
+# y el nombre del archivo que hemos puesto en el archivos_info.txt (MLP_runs.db en nuestro ejemplo, en vez de datosEntrenamiento.parquet...)
+# leer para utilizar esto ya en el modelo
+data = pd.read_parquet('./datos/DATOS_MIN.parquet') # 
+
 # Cargar datos
-data = pd.read_csv('./2/data/datos_predecir_min.csv')
+#data = pd.read_csv('./2/data/datos_predecir_min.csv')
 # Eliminar las columnas categóricas
-columnas=['name','EventStartTime', 'SalesStartTIme', 'SalesEndTime', 'nameArtist', 'VenueName', 
-          'VenueCity', 'VenueState','Generos_combinados']
-data.drop(columnas, axis=1, inplace=True)
+#columnas=['name','EventStartTime', 'SalesStartTIme', 'SalesEndTime', 'nameArtist', 'VenueName', 
+#          'VenueCity', 'VenueState','Generos_combinados']
+#data.drop(columnas, axis=1, inplace=True)
 
 RANDOM_STATE = 83 # Fijar la semilla
 
