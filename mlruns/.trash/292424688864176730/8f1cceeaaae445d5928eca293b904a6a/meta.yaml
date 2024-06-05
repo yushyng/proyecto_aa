@@ -1,8 +1,9 @@
 artifact_uri: file:///Users/yushanyang/Desktop/proyecto_aa/modelos/mlruns/292424688864176730/8f1cceeaaae445d5928eca293b904a6a/artifacts
+deleted_time: 1715536850862
 end_time: 1714993259146
 entry_point_name: ''
 experiment_id: '292424688864176730'
-lifecycle_stage: active
+lifecycle_stage: deleted
 run_id: 8f1cceeaaae445d5928eca293b904a6a
 run_name: RandomForestRegressor
 run_uuid: 8f1cceeaaae445d5928eca293b904a6a

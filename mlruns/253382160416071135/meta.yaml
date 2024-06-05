@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/253382160416071135
+creation_time: 1715537006898
+experiment_id: '253382160416071135'
+last_update_time: 1715537006898
+lifecycle_stage: active
+name: MinPriceDecisionTree
