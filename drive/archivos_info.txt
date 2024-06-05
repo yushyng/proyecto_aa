@@ -1,2 +1,4 @@
 1cUDsJWr2OMli6RctQGGzjJhc2q-fvNt4,DATOS_MIN.parquet,./datos
 11TwKQ3rXAfoNGEO76q1NTWZwk40Gi1U1,DATOS_MAX.parquet,./datos
+12pvIycpYpzmUAHaWHWZ9DrEWxlNdRQ5Q,minEstratificado.parquet,./datos
+1H0dw3qaigPeb_LSDGnkDrApmG3h6-SkW,maxEstratificado.parquet,./datos
