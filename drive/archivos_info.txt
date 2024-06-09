@@ -2,3 +2,4 @@
 11TwKQ3rXAfoNGEO76q1NTWZwk40Gi1U1,DATOS_MAX.parquet,./datos
 12pvIycpYpzmUAHaWHWZ9DrEWxlNdRQ5Q,minEstratificado.parquet,./datos
 1H0dw3qaigPeb_LSDGnkDrApmG3h6-SkW,maxEstratificado.parquet,./datos
+1tcblXckniDStxcmQqzSiQgqkgBhcKtoE,maxEstratificado100.parquet,./datos
