@@ -25,3 +25,8 @@ SECURITY.md
 
 # Ignorar archivos y carpetas generados por IDEs
 .idea/
+
+# Ignorar archivos y carpetas generadas por MLflow
+mlruns.db
+mlruns/
+mlartifacts/
