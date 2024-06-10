@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/677894226334844861/b594561f11f84102b2f3e47328c36ac2/artifacts
+end_time: 1718022577845
+entry_point_name: ''
+experiment_id: '677894226334844861'
+lifecycle_stage: active
+run_id: b594561f11f84102b2f3e47328c36ac2
+run_name: Modelo RandomSearch Decision Tree
+run_uuid: b594561f11f84102b2f3e47328c36ac2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718022576247
+status: 3
+tags: []
+user_id: yushanyang
