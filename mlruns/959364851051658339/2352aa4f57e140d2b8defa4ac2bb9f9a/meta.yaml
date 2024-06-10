@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/959364851051658339/2352aa4f57e140d2b8defa4ac2bb9f9a/artifacts
+end_time: 1718034708032
+entry_point_name: ''
+experiment_id: '959364851051658339'
+lifecycle_stage: active
+run_id: 2352aa4f57e140d2b8defa4ac2bb9f9a
+run_name: Modelo Base Decision Tree
+run_uuid: 2352aa4f57e140d2b8defa4ac2bb9f9a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718034704447
+status: 3
+tags: []
+user_id: yushanyang

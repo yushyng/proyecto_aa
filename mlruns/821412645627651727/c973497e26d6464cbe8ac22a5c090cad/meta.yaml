@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/821412645627651727/c973497e26d6464cbe8ac22a5c090cad/artifacts
+end_time: 1718034992460
+entry_point_name: ''
+experiment_id: '821412645627651727'
+lifecycle_stage: active
+run_id: c973497e26d6464cbe8ac22a5c090cad
+run_name: MODELO Base Random Forest
+run_uuid: c973497e26d6464cbe8ac22a5c090cad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718034990791
+status: 3
+tags: []
+user_id: yushanyang

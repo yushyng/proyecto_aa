@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/959364851051658339/0eef4764b1274aefae81a4b16e02e53a/artifacts
+end_time: 1718034749499
+entry_point_name: ''
+experiment_id: '959364851051658339'
+lifecycle_stage: active
+run_id: 0eef4764b1274aefae81a4b16e02e53a
+run_name: MODELO PARÁMETROS GRID SEARCH Decision Tree
+run_uuid: 0eef4764b1274aefae81a4b16e02e53a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718034746547
+status: 3
+tags: []
+user_id: yushanyang
