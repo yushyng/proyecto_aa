@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/406389699106489527/1b944202d1f84a6b8d939f54db15dae6/artifacts
+deleted_time: 1718018928901
+end_time: 1718018662025
+entry_point_name: ''
+experiment_id: '406389699106489527'
+lifecycle_stage: deleted
+run_id: 1b944202d1f84a6b8d939f54db15dae6
+run_name: Base sin hiperparametros DT
+run_uuid: 1b944202d1f84a6b8d939f54db15dae6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718018660054
+status: 3
+tags: []
+user_id: yushanyang

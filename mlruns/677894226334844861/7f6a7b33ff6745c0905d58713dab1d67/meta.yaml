@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/677894226334844861/7f6a7b33ff6745c0905d58713dab1d67/artifacts
+deleted_time: 1718022812443
+end_time: 1718022762109
+entry_point_name: ''
+experiment_id: '677894226334844861'
+lifecycle_stage: deleted
+run_id: 7f6a7b33ff6745c0905d58713dab1d67
+run_name: MODELO RANDOM SEARCH Random Forest
+run_uuid: 7f6a7b33ff6745c0905d58713dab1d67
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718022760698
+status: 3
+tags: []
+user_id: yushanyang

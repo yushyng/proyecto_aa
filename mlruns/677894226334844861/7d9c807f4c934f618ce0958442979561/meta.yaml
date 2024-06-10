@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/677894226334844861/7d9c807f4c934f618ce0958442979561/artifacts
+end_time: 1718028902555
+entry_point_name: ''
+experiment_id: '677894226334844861'
+lifecycle_stage: active
+run_id: 7d9c807f4c934f618ce0958442979561
+run_name: MODELO GridSearchCV Random Forest
+run_uuid: 7d9c807f4c934f618ce0958442979561
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1718028900804
+status: 3
+tags: []
+user_id: yushanyang
