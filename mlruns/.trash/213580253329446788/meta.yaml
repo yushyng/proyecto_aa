@@ -1,7 +1,0 @@
-artifact_location: mlflow-artifacts:/213580253329446788
-creation_time: 1718018660071
-experiment_id: '213580253329446788'
-last_update_time: 1718018935653
-lifecycle_stage: deleted
-name: Modelo base Decision Tree
-tags: {}
