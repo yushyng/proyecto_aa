@@ -69,10 +69,18 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
   
   Esta carpeta se encarga de limpiar el conjunto de datos ya sea debido a los duplicados, nulos o los posibles outliers o valores atípicos. Además de realizar una corrección o 
    normalización de las variables.
+  
 - Carpeta Exploracion:
 
-  Este módulo se encarga de realizar una exploración profunda de los datos como es estudiar las correlaciones entre las variables ya sean numéricas o categóricas y de estudiar los    
-  outliers, además del rango de nuestras variables objetivo. Visualizaremos varias graficas para mejorar el entendimiento y el comportamiento de los datos.
+  Este módulo se encarga de realizar una exploración profunda de los datos como es estudiar las correlaciones entre las variables ya sean numéricas o categóricas y de estudiar los outliers, además del rango de nuestras variables objetivo. Visualizaremos varias graficas para mejorar el entendimiento y el comportamiento de los datos.
+
+- Carpeta Modelos:
+
+ Esta carpeta contiene archivos y subcarpetas relacionados con el entrenamiento y análisis de los modelos escogidos para el proyecto (Decision Tree, Linear Regression y Redes Neuronales) que se encargan de la predicción de precios máximo y mínimo, así como las bases de datos de MLFlow (mlruns.db) para gestionar experimentos y métricas de los modelos.
+
+ - Carpeta Drive:
+
+Este módulo se encarga de almacenar archivos en la nube (en nuestro caso, Google Drive) y de llevar a cabo la descarga y gestión de datos en local del proyecto. Así, los archivos de datos (en formato Parquet o CSV), son posteriormente utilizados en el proyecto para el entrenamiento y análisis de modelos.
 
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
 Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_ en la terminal del programa.
