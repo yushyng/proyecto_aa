@@ -80,7 +80,7 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
 
  - Carpeta Drive:
 
- Este módulo se encarga de almacenar archivos en la nube (en nuestro caso, Google Drive) y de llevar a cabo la descarga y gestión de datos en local del proyecto. Así, los archivos de datos (en formato Parquet o CSV), son posteriormente utilizados en el proyecto para el entrenamiento y análisis de modelos.
+  Este módulo se encarga de almacenar archivos en la nube (en nuestro caso, Google Drive) y de llevar a cabo la descarga y gestión de datos en local del proyecto. Así, los archivos de datos (en formato Parquet o CSV), son posteriormente utilizados en el proyecto para el entrenamiento y análisis de modelos.
 
 ## Otros aspectos importantes
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
