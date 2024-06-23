@@ -30,3 +30,7 @@ SECURITY.md
 mlruns.db
 mlruns/
 mlartifacts/
+
+# Ignorar carpetas de control de configuraciones
+idea/
+.vscode/
