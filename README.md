@@ -84,6 +84,9 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
 
 ## Otros aspectos importantes
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
+
 Si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción ``` pip freeze > requirements.txt ``` en la terminal del programa.
+
 Si se modifica la estructura del código o si se añaden nuevas carpetas, recuerda actualizar la información del README.md (en el apartado anterior a este).
+
 Por último, si tu ordenador crea archivos específicos del sistema o existen otros archivos que no quieras mantener continuamente clonados con el repositorio, incorpóralos en el .gitignore. Podrás encontrarlo en la raíz del proyecto.
