@@ -76,11 +76,14 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
 
 - Carpeta Modelos:
 
- Esta carpeta contiene archivos y subcarpetas relacionados con el entrenamiento y análisis de los modelos escogidos para el proyecto (Decision Tree, Linear Regression y Redes Neuronales) que se encargan de la predicción de precios máximo y mínimo, así como las bases de datos de MLFlow (mlruns.db) para gestionar experimentos y métricas de los modelos.
+  Esta carpeta contiene archivos y subcarpetas relacionados con el entrenamiento y análisis de los modelos escogidos para el proyecto (Decision Tree, Linear Regression y Redes Neuronales) que se encargan de la predicción de precios máximo y mínimo, así como las bases de datos de MLFlow (mlruns.db) para gestionar experimentos y métricas de los modelos.
 
  - Carpeta Drive:
 
-Este módulo se encarga de almacenar archivos en la nube (en nuestro caso, Google Drive) y de llevar a cabo la descarga y gestión de datos en local del proyecto. Así, los archivos de datos (en formato Parquet o CSV), son posteriormente utilizados en el proyecto para el entrenamiento y análisis de modelos.
+ Este módulo se encarga de almacenar archivos en la nube (en nuestro caso, Google Drive) y de llevar a cabo la descarga y gestión de datos en local del proyecto. Así, los archivos de datos (en formato Parquet o CSV), son posteriormente utilizados en el proyecto para el entrenamiento y análisis de modelos.
 
+## Otros aspectos importantes
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
-Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_ en la terminal del programa.
+Si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción ``` pip freeze > requirements.txt ``` en la terminal del programa.
+Si se modifica la estructura del código o si se añaden nuevas carpetas, recuerda actualizar la información del README.md (en el apartado anterior a este).
+Por último, si tu ordenador crea archivos específicos del sistema o existen otros archivos que no quieras mantener continuamente clonados con el repositorio, incorpóralos en el .gitignore. Podrás encontrarlo en la raíz del proyecto.
