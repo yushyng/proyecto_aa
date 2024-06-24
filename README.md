@@ -7,7 +7,7 @@ __Curso__: 2º GIDIA
 ## Sobre el proyecto
 EventPeak es un portal de venta de entradas para los conciertos realizados en España. 
 
-Para acordar unos precios de venta justos y competitivos, nos basaremos en un sistema de Aprendizaje Automático desarrollado por el equipo de EventPeak que logre predecir el rango de precios entre los que oscila cada concierto que se publique en nuestro portal. Al tratarse de un rango de precio, realizaremos dos modelos: uno que prediga el precio mínimo y otro que prediga el precio máximo.
+Para acordar unos precios de venta justos y competitivos, nos basaremos en un sistema de Aprendizaje Automático desarrollado por el equipo de EventPeak que logre predecir el rango de precios mínimo y máximo entre los que oscila cada concierto que se publique en nuestro portal. Al tratarse de un rango de precio, realizaremos dos modelos: uno que prediga el precio mínimo y otro que prediga el precio máximo.
 
 El plan es implementar y entrenar este sistema con los datos actualmente publicados y probar su funcionamiento con los datos nuevos que sean publicados a medio o largo plazo.
 Todos estos datos están extraídos, principalmente, con la API de Ticketmaster.
@@ -21,9 +21,7 @@ git clone https://github.com/yushyng/proyecto_aa.git
 ```
 
 
-El proyecto se desarrollará con PyCharm. Por ello, recomendamos tener descargado este entorno de desarrollo. Asegúrate de tener instalado un intérpetre de Python 3.9 o una versión superior.
-
-Para descargar los datos de Google Drive ejecutar el scrpit dentro de la carpeta data habiendo descargado también el fichero de texto.
+El proyecto se desarrollará con Visual Studio Code. Por ello, recomendamos tener descargado este entorno de desarrollo. Asegúrate de tener instalado un intérpetre de Python 3.9 o una versión superior.
 
 Antes de comenzar a trabajar, realiza un _pull_ para bajarte la última versión del proyecto. Recomendamos también la realización de _commits_ periódicos para mantener a salvo cualquier cambio elaborado (no esperes a tener el código terminado para hacer _commit_). Y después de un _commit_, hacer un _push_ (existe la opción de hacer ambas cosas juntas en un solo paso).
 
@@ -71,10 +69,24 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
   
   Esta carpeta se encarga de limpiar el conjunto de datos ya sea debido a los duplicados, nulos o los posibles outliers o valores atípicos. Además de realizar una corrección o 
    normalización de las variables.
+  
 - Carpeta Exploracion:
 
-  Este módulo se encarga de realizar una exploración profunda de los datos como es estudiar las correlaciones entre las variables ya sean numéricas o categóricas y de estudiar los    
-  outliers, además del rango de nuestras variables objetivo. Visualizaremos varias graficas para mejorar el entendimiento y el comportamiento de los datos.
+  Este módulo se encarga de realizar una exploración profunda de los datos como es estudiar las correlaciones entre las variables ya sean numéricas o categóricas y de estudiar los outliers, además del rango de nuestras variables objetivo. Visualizaremos varias graficas para mejorar el entendimiento y el comportamiento de los datos.
 
+- Carpeta Modelos:
+
+  Esta carpeta contiene archivos y subcarpetas relacionados con el entrenamiento y análisis de los modelos escogidos para el proyecto (Decision Tree, Linear Regression y Redes Neuronales) que se encargan de la predicción de precios máximo y mínimo, así como las bases de datos de MLFlow (mlruns.db) para gestionar experimentos y métricas de los modelos.
+
+ - Carpeta Drive:
+
+   Este módulo se encarga de almacenar archivos en la nube (en nuestro caso, Google Drive) y de llevar a cabo la descarga y gestión de datos en local del proyecto. Así, los  archivos de datos (en formato Parquet o CSV), son posteriormente utilizados en el proyecto para el entrenamiento y análisis de modelos.
+
+## Otros aspectos importantes
 Recuerda comentar breve pero detalladamente cada método que implementes para ayudar a los compañeros de trabajo a comprenderlo.
-Y si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción _pip freeze > requirements.txt_ en la terminal del programa.
+
+Si tu trabajo requiere de la instalación de un nuevo paquete, recuerda añadirlo al requirements.txt escribiéndolo manualmente o usando la instrucción ``` pip freeze > requirements.txt ``` en la terminal del programa.
+
+Si se modifica la estructura del código o si se añaden nuevas carpetas, recuerda actualizar la información del README.md (en el apartado anterior a este).
+
+Por último, si tu ordenador crea archivos específicos del sistema o existen otros archivos que no quieras mantener continuamente clonados con el repositorio, incorpóralos en el .gitignore. Podrás encontrarlo en la raíz del proyecto.
