@@ -8,18 +8,25 @@ def venueClass(df):
                   'gremi', 'sospechosa', 'auditorio la alameda', 'zentral',
                   'la chica de ayer', 'mamba', 'gran café', 'wolf', 'kafe antzokia',
                   'náutico', 'palacio de', 'antiguo mercado', 'playa club',
-                  'bataplan', 'auditorio', 'recinto']
+                  'bataplan', 'auditorio', 'recinto', 'fútbol', 'independance',
+                  'atletismo', 'club', 'hotel', 'jamboree', 'marina norte', 'duquessa',
+                  'can reon', 'urban', 'siroco', 'gas', 'guarida', 'volander', 'nau',
+                  'jazz', 'heliogàbal']
 
     # teatros con más capacidad de 1000 y menos de 5000
     listaTeatros = ['teatro', 'auditorio starlite', 'sant jordi club', 'riviera',
                     'palau sant jordi', 'castillo', 'poble espanyol',
-                    'pabellón magdalena', 'enjoy! multiusos', 'golf']
+                    'pabellón magdalena', 'enjoy! multiusos', 'golf', 'ifema', 'trips'
+                    , 'palau', 'farga', 'marbella arena', 'brilla', 'alcazaba',
+                    'coruña sounds', 'artillería', 'jardines', 'pandora', 'paral·lel',
+                    'ushuaïa', 'hï ibiza']
 
     listaEstadios = ['wizink center', 'palacio vistalegre', 'ventas',
                      'plaza de toros', 'coliseum', 'marenostrum',
                      'ciudad artes y ciencias', 'concert music festival',
-                     'navarra arena']
+                     'navarra arena', 'bizkaia arena', 'fundación unicaja']
 
+    
     def asignar_clase(row):
         venueName = row['VenueName'].lower()
         if any(sala in venueName for sala in listaSalas):
