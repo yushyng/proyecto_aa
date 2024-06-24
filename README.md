@@ -74,6 +74,10 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
 
   Este módulo se encarga de realizar una exploración profunda de los datos como es estudiar las correlaciones entre las variables ya sean numéricas o categóricas y de estudiar los outliers, además del rango de nuestras variables objetivo. Visualizaremos varias graficas para mejorar el entendimiento y el comportamiento de los datos.
 
+- Carpeta Estratificacion:
+
+   Aquí se guardará el notebook explicado con el código que realiza y guarda en parquet la estratificación de ambos conjuntos de datos (max_price y min_price, que son 2 estratificaciones distintas porque hay una transformación en max que, sin embargo, no se hace en min).
+
 - Carpeta Modelos:
 
   Esta carpeta contiene archivos y subcarpetas relacionados con el entrenamiento y análisis de los modelos escogidos para el proyecto (Decision Tree, Linear Regression y Redes Neuronales) que se encargan de la predicción de precios máximo y mínimo, así como las bases de datos de MLFlow (mlruns.db) para gestionar experimentos y métricas de los modelos.
