@@ -34,3 +34,5 @@ mlartifacts/
 # Ignorar carpetas de control de configuraciones
 idea/
 .vscode/
+__pycache__/
+*.pyc

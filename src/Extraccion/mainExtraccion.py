@@ -1,9 +1,8 @@
 from Extraccion import Extraccion
 from Carga import Carga
 #Cargamos los datos recopilados tras la parte de Adquisicion
-archivos = ['csvs/adquisicion/d_1_03.csv', 'csvs/adquisicion/d_17_02.csv',
-            'csvs/adquisicion/d_21_02.csv', 'csvs/adquisicion/d_26_02.csv',
-            'csvs/adquisicion/d_28_02.csv', 'csvs/adquisicion/datos_5_03.csv']
+archivos = ['d_1_03.csv', 'd_17_02.csv', 'd_21_02.csv', 
+            'd_26_02.csv', 'd_28_02.csv', 'datos_5_03.csv']
 
 print("\nCARGA DEL CONJUNTO DE DATOS EN BRUTO")
 # Instanciar la clase y cargar los archivos

@@ -2,8 +2,20 @@ import pandas as pd
 from sklearn.impute import KNNImputer
 from LimpiezFinal import LimpiezaFinal
 
-# Lee el archivo CSV despúes de Extraccion
-df_total = pd.read_csv('dfExtraccion.csv')
+import os
+import sys
+
+# Añadimos la carpeta 'drive' al path
+ruta_carpeta_drive = os.path.abspath('../drive') #.. era para salirse de la carpeta actual y entrar en la de drive
+if ruta_carpeta_drive not in sys.path:
+    sys.path.insert(0, ruta_carpeta_drive)
+
+import drive
+
+# Descargamos los datos en formato parquet de Google Drive y guardamos localmente
+drive.descargar_archivos_concretos('df_integracion.csv', '../drive')
+# leer para utilizar esto ya en el modelo
+df_total = pd.read_csv('datos/df_integracion.csv') 
 
 print("\nLIMPIEZA DE LOS DATOS")
 # Elegimos el parámetro predeterminado (5) y después aplicamos a la columna dataframe
