@@ -11,15 +11,17 @@ def venueClass(df):
                   'bataplan', 'auditorio', 'recinto', 'fútbol', 'independance',
                   'atletismo', 'club', 'hotel', 'jamboree', 'marina norte', 'duquessa',
                   'can reon', 'urban', 'siroco', 'gas', 'guarida', 'volander', 'nau',
-                  'jazz', 'heliogàbal']
+                  'jazz', 'heliogàbal', 'espacio', 'tizón', 'disco', 'pecera', 'noir', 'aliatar',
+                 'marina', 'raqueta', 'ferial', 'espai' ]
 
     # teatros con más capacidad de 1000 y menos de 5000
     listaTeatros = ['teatro', 'auditorio starlite', 'sant jordi club', 'riviera',
-                    'palau sant jordi', 'castillo', 'poble espanyol',
+                    'palau sant jordi', 'castillo', 'poble espanyol', 'damm',
                     'pabellón magdalena', 'enjoy! multiusos', 'golf', 'ifema', 'trips'
                     , 'palau', 'farga', 'marbella arena', 'brilla', 'alcazaba',
                     'coruña sounds', 'artillería', 'jardines', 'pandora', 'paral·lel',
-                    'ushuaïa', 'hï ibiza']
+                    'ushuaïa', 'hï ibiza', 'camping', 'carmen', 'fusteret', 'arena', 'bilbao', 'pabellón', 
+                    'oasisss', 'stage', 'pisuerga', 'centro hípico', 'pal.', 'aretoa']
 
     listaEstadios = ['wizink center', 'palacio vistalegre', 'ventas',
                      'plaza de toros', 'coliseum', 'marenostrum',
