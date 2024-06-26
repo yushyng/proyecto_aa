@@ -12,7 +12,7 @@ def venueClass(df):
                   'atletismo', 'club', 'hotel', 'jamboree', 'marina norte', 'duquessa',
                   'can reon', 'urban', 'siroco', 'gas', 'guarida', 'volander', 'nau',
                   'jazz', 'heliogàbal', 'espacio', 'tizón', 'disco', 'pecera', 'noir', 'aliatar',
-                 'marina', 'raqueta', 'ferial', 'espai' ]
+                 'marina', 'raqueta', 'ferial', 'espai', 'cochera' ]
 
     # teatros con más capacidad de 1000 y menos de 5000
     listaTeatros = ['teatro', 'auditorio starlite', 'sant jordi club', 'riviera',
