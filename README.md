@@ -47,7 +47,7 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
 
   Desde el mainExtraccion.py se llama a los modulos Carga.py, que junta los datos recopilados en un periodo de tiempo en un único csv, y Extraccion.py que extraen las posibles variables de la información que nos proporcionaba la API.
   
-- Carpeta Integracion:
+- ```Carpeta Integracion```:
   
   La fase de integracion de nuevas variables está dividida en varios módulos, uno por cada fuente utilizada: Ticketmaster, LastFM, Spotify, Wiki, YoutubeSubs, cuyas urls nos    
   proporciona Ticketmaster.
@@ -65,24 +65,29 @@ Cabe recalcar que cada parte del preprocesamiento tiene su propio programa main 
   Se integran también nuevas variables binarias y variables que conseguimos a partir de otras.
   Todos estos módulos se llamarán desde el propio main de la carpeta llamada mainIntegración. 
 
-- Carpeta Limpieza:
+- ```Carpeta Limpieza```:
   
   Esta carpeta se encarga de limpiar el conjunto de datos ya sea debido a los duplicados, nulos o los posibles outliers o valores atípicos. Además de realizar una corrección o 
    normalización de las variables.
   
-- Carpeta Exploracion:
+- ```Carpeta Exploracion```:
 
   Este módulo se encarga de realizar una exploración profunda de los datos como es estudiar las correlaciones entre las variables ya sean numéricas o categóricas y de estudiar los outliers, además del rango de nuestras variables objetivo. Visualizaremos varias graficas para mejorar el entendimiento y el comportamiento de los datos.
 
-- Carpeta Estratificacion:
+- ```Carpeta Estratificacion```:
 
    Aquí se guardará el notebook explicado con el código que realiza y guarda en parquet la estratificación de ambos conjuntos de datos (max_price y min_price, que son 2 estratificaciones distintas porque hay una transformación en max que, sin embargo, no se hace en min).
 
-- Carpeta Modelos:
+- ```Carpeta Modelos```:
 
   Esta carpeta contiene archivos y subcarpetas relacionados con el entrenamiento y análisis de los modelos escogidos para el proyecto (Decision Tree, Linear Regression y Redes Neuronales) que se encargan de la predicción de precios máximo y mínimo, así como las bases de datos de MLFlow (mlruns.db) para gestionar experimentos y métricas de los modelos.
 
- - Carpeta Drive:
+
+- ``` Carpeta Despliegue ```:
+
+   En la fase de Despliegue, se extrae y se procede con la parte del preprocesado concreto para un conjunto de datos completamente nuevo (subcarpeta ``` Nuevos_Datos ```), se prueba el funcionamiento de los modelos de precio máximo y mínimo con estos datos nuevos no vistos (subcarpetas ``` MaxPrice ``` y ``` MinPrice ```).
+
+ - ```Carpeta Drive```:
 
    Este módulo se encarga de almacenar archivos en la nube (en nuestro caso, Google Drive) y de llevar a cabo la descarga y gestión de datos en local del proyecto. Así, los  archivos de datos (en formato Parquet o CSV), son posteriormente utilizados en el proyecto para el entrenamiento y análisis de modelos.
 
